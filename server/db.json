@@ -1,0 +1,44 @@
+    {
+  "users": [
+    {
+      "id": 1,
+      "name": "Dung",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "name": "Admin",
+      "role": "admin"
+    }
+  ],
+
+  "posts": [
+    {
+      "id": 1,
+      "authorId": 1,
+      "image": "https://picsum.photos/300",
+
+      "caption": "Nike Mercurial TF 1tr2",
+
+      "status": "approved",
+
+      "createdAt": "2026-06-23"
+    }
+  ],
+
+  "messages": [
+    {
+      "id": 1,
+
+      "postId": 1,
+
+      "senderId": 1,
+
+      "receiverId": 2,
+
+      "text": "Con khong",
+
+      "createdAt": "10:20"
+    }
+  ]
+}
