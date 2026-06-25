@@ -278,3 +278,93 @@ header .actions .action_cart a:hover + #cart_count{
   font-weight: 500;
   color: var(--light-gray);
 }
+
+
+/* CATEGORIES */
+.main .products .categories{}
+.main .products .categories .categories_title{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.main .products .categories .categories_list{
+  display: flex;
+  gap: 10px;
+  width: 100vw;
+  padding: 20px 40px;
+}
+
+/* categories item */
+.main .products .categories .categories_list .categories-item{
+  width: calc(100vw / 5);
+  height: 300px;
+  border-radius: 4px;
+  /*  */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /*flex nhưng mà các phân tử nằm dọc */
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  /*  */
+  position: relative;
+  cursor: pointer;
+}
+
+/* image */
+.main .products .categories .categories_list .categories-item img{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+
+}
+
+.main .products .categories .categories_list .categories-item::before{
+  content: "";
+  position: absolute;
+  inset: 0; /*Thay cho: t0 - b0 - l0 - r0*/
+  z-index: 2;
+  border-radius: 4px;
+
+}
+
+.main .products .categories .categories_list .categories-item:hover::before{
+  background: rgba(0,0,0,0.6);
+  transition: .3s;
+}
+
+.main .products .categories .categories_list .categories-item:hover .name,
+.main .products .categories .categories_list .categories-item:hover .btn-categories{
+  opacity: 1;
+  transition: .5s;
+}
+
+.main .products .categories .categories_list .categories-item .name{
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--light-gray);
+  z-index: 3;
+  opacity: 0;
+
+}
+
+.main .products .categories .categories_list .categories-item .btn-categories{
+  background-color: var(--black);
+  color: var(--light-gray);
+  z-index: 3;
+  opacity: 0;
+}
+
+.main .products .categories .categories_list .categories-item .btn-categories:hover{
+  margin-bottom: 2px;
+  color: var(--red);
+  transition: .3;
+}
