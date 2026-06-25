@@ -13,6 +13,15 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!--  -->
@@ -20,12 +29,15 @@
       <div class="layout">
         <!-- header -->
         <header>
+          <!-- logo -->
           <div class="logo">
             <a href="#">
-              <img src="" alt="" />
+              <img src="./image/logo.png" alt="" />
+              Market
             </a>
           </div>
 
+          <!-- menu -->
           <ul class="menu">
             <li class="menu-item">
               <a href="#">HOME</a>
@@ -43,7 +55,29 @@
               <a href="#">CONTACT</a>
             </li>
           </ul>
-          <div class="actions"></div>
+
+          <!-- actions -->
+          <div class="actions">
+            <div class="action_search">
+              <input type="text" class="input_search" />
+              <a href="#">
+                <i class="fa-brands fa-sistrix"></i>
+              </a>
+            </div>
+
+            <div class="action_user">
+              <a href="#">
+                <i class="fa-regular fa-user"></i>
+              </a>
+            </div>
+
+            <div class="action_cart">
+              <a href="#">
+                <i class="ri-shopping-cart-line"></i>
+              </a>
+              <p id="cart_count">0</p>
+            </div>
+          </div>
         </header>
 
         <!-- Main -->
