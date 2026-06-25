@@ -197,6 +197,7 @@ header .actions .action_cart a:hover + #cart_count{
 .main{}
 .main .products{}
 
+/* banner */
 .main .products .banner{
   position: relative;
   overflow: hidden;
@@ -214,6 +215,7 @@ header .actions .action_cart a:hover + #cart_count{
     z-index: 1;
 }
 
+/* banner content */
 .main .products .banner .banner-content{
   height: 100%;
   width: 100vw;
@@ -247,4 +249,32 @@ header .actions .action_cart a:hover + #cart_count{
 .main .products .banner .banner-content .btn-show:hover{
   color: var(--red);
   transition: .3s;
+}
+
+/* banner service */
+.main .products .banner .banner-service{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    z-index: 3;
+}
+
+.main .products .banner .banner-service .service_item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main .products .banner .banner-service .service_item i{
+  font-size: 24px;
+  color: #d32f2f;
+}
+
+.main .products .banner .banner-service .service_item p{
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--light-gray);
 }
