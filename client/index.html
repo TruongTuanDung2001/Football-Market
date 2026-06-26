@@ -1,308 +1,385 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Market</title>
+    <!--  -->
+    <link rel="stylesheet" href="/client/css/style.css" />
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Football Market</title>
-  <!--  -->
-  <link rel="stylesheet" href="/client/css/style.css" />
-  <!-- font google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
-</head>
-
-<body>
-  <!--  -->
-  <div class="app">
-    <div class="layout">
-      <!-- header -->
-      <header>
-        <!-- logo -->
-        <div class="logo">
-          <a href="#">
-            <img src="./image/logo.png" alt="" />
-            Market
-          </a>
-        </div>
-
-        <!-- menu -->
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="#">HOME</a>
-          </li>
-          <li class="menu-item">
-            <a href="#">SHOP</a>
-          </li>
-          <li class="menu-item">
-            <a href="#">COLLECTIONS</a>
-          </li>
-          <li class="menu-item">
-            <a href="#">ABOUT US</a>
-          </li>
-          <li class="menu-item">
-            <a href="#">CONTACT</a>
-          </li>
-        </ul>
-
-        <!-- actions -->
-        <div class="actions">
-          <!-- search -->
-          <div class="action_search">
-            <input type="text" class="input_search" />
+  <body>
+    <!--  -->
+    <div class="app">
+      <div class="layout">
+        <!-- header -->
+        <header>
+          <!-- logo -->
+          <div class="logo">
             <a href="#">
-              <i class="fa-brands fa-sistrix"></i>
+              <img src="./image/logo.png" alt="" />
+              Market
             </a>
           </div>
 
-          <!-- user -->
-          <div class="action_user">
-            <a href="#">
-              <i class="fa-regular fa-user"></i>
-            </a>
-          </div>
+          <!-- menu -->
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="#">HOME</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">SHOP</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">COLLECTIONS</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">ABOUT US</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">CONTACT</a>
+            </li>
+          </ul>
 
-          <!-- cart -->
-          <div class="action_cart">
-            <a href="#">
-              <i class="ri-shopping-cart-line"></i>
-            </a>
-            <p id="cart_count">0</p>
+          <!-- actions -->
+          <div class="actions">
+            <!-- search -->
+            <div class="action_search">
+              <input type="text" class="input_search" />
+              <a href="#">
+                <i class="fa-brands fa-sistrix"></i>
+              </a>
+            </div>
+
+            <!-- user -->
+            <div class="action_user">
+              <a href="#">
+                <i class="fa-regular fa-user"></i>
+              </a>
+            </div>
+
+            <!-- cart -->
+            <div class="action_cart">
+              <a href="#">
+                <i class="ri-shopping-cart-line"></i>
+              </a>
+              <p id="cart_count">0</p>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main -->
+        <div class="main">
+          <div class="products">
+            <!-- banner -->
+            <div class="banner">
+              <img class="banner-img" src="/client/image/banner.jpg" alt="" />
+              <div class="banner-content">
+                <p>NEW COLLECTION</p>
+                <h3>Make It</h3>
+                <h1>Happen.</h1>
+                <p>Your journey, your rules, your victory.</p>
+                <button class="btn-show">SHOP NOW</button>
+              </div>
+
+              <div class="banner-service">
+                <div class="service_item">
+                  <i class="ri-truck-line"></i>
+                  <p>Fast Delivery</p>
+                </div>
+
+                <div class="service_item">
+                  <i class="ri-secure-payment-line"></i>
+                  <p>Secure Payment</p>
+                </div>
+
+                <div class="service_item">
+                  <i class="ri-refresh-line"></i>
+                  <p>Easy Returns</p>
+                </div>
+
+                <div class="service_item">
+                  <i class="ri-customer-service-2-line"></i>
+                  <p>24/7 Support</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- category danh mục sản phẩm. Phân loại kiểu giày-->
+            <div class="categories">
+              <div class="categories_title">Categories</div>
+              <div class="categories_list">
+                <!-- chắc là 5 cái -->
+                <!-- item -->
+                <div class="categories-item">
+                  <img
+                    class="category-img"
+                    src="./image/categories glasses.jpg"
+                    alt=""
+                  />
+                  <div class="name">GLASSES</div>
+                  <button class="btn-categories" data-category="">
+                    SHOP NOW
+                  </button>
+                </div>
+
+                <!-- item -->
+                <div class="categories-item">
+                  <img
+                    class="category-img"
+                    src="./image/categories shoes.jpg"
+                    alt=""
+                  />
+                  <div class="name">SHOES</div>
+                  <button class="btn-categories" data-category="">
+                    SHOP NOW
+                  </button>
+                </div>
+
+                <!-- item -->
+                <div class="categories-item">
+                  <img
+                    class="category-img"
+                    src="./image/categories jaket.jpg"
+                    alt=""
+                  />
+                  <div class="name">JACKET</div>
+                  <button class="btn-categories" data-category="">
+                    SHOP NOW
+                  </button>
+                </div>
+
+                <!-- item -->
+                <div class="categories-item">
+                  <img
+                    class="category-img"
+                    src="./image/categories hat.jpg"
+                    alt=""
+                  />
+                  <div class="name">HAT</div>
+                  <button class="btn-categories" data-category="">
+                    SHOP NOW
+                  </button>
+                </div>
+
+                <!-- item -->
+                <div class="categories-item">
+                  <img
+                    class="category-img"
+                    src="./image/categories shirt.jpg"
+                    alt=""
+                  />
+                  <div class="name">SHIRT</div>
+                  <button class="btn-categories" data-category="">
+                    SHOP NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- feature sản phẩm nổi bật-->
+            <div class="featured">
+              <div class="feature_title">Featured</div>
+              <div class="feature_list">
+                <!-- item -->
+                <div class="product-item">
+                  <div class="img">
+                    <img src="./image/product glasses 1.jpg" alt="" />
+                  </div>
+                  <div class="name">Glasses Pro 1</div>
+                  <div class="price">20$</div>
+                  <button class="btn-detail" data-id="">Detail</button>
+                  <div class="product-item_actions">
+                    <button class="btn-buy">Buy <i></i></button>
+                    <button class="btn-addCart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- item -->
+                <div class="product-item">
+                  <div class="img">
+                    <img src="./image/product shoes 1.jpg" alt="" />
+                  </div>
+                  <div class="name">Addidas F50</div>
+                  <div class="price">240$</div>
+                  <button class="btn-detail" data-id="">Detail</button>
+                  <div class="product-item_actions">
+                    <button class="btn-buy">Buy <i></i></button>
+                    <button class="btn-addCart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- item -->
+                <div class="product-item">
+                  <div class="img">
+                    <img src="./image/product jaket 1.jpg" alt="" />
+                  </div>
+                  <div class="name">Jacket Supper light</div>
+                  <div class="price">200$</div>
+                  <button class="btn-detail" data-id="">Detail</button>
+                  <div class="product-item_actions">
+                    <button class="btn-buy">Buy <i></i></button>
+                    <button class="btn-addCart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- item -->
+                <div class="product-item">
+                  <div class="img">
+                    <img src="image/product hat 1.jpg" alt="" />
+                  </div>
+                  <div class="name">Hat Club</div>
+                  <div class="price">40$</div>
+                  <button class="btn-detail" data-id="">Detail</button>
+                  <div class="product-item_actions">
+                    <button class="btn-buy">Buy <i></i></button>
+                    <button class="btn-addCart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- item -->
+                <div class="product-item">
+                  <div class="img">
+                    <img src="./image/product-categories 5.jpg" alt="" />
+                  </div>
+                  <div class="name">Portugal Shirt</div>
+                  <div class="price">55$</div>
+                  <button class="btn-detail" data-id="">Detail</button>
+                  <div class="product-item_actions">
+                    <button class="btn-buy">Buy <i></i></button>
+                    <button class="btn-addCart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- hiện sản phẩm sale -->
+            <div class="deals">
+              <!-- 3 cái thôi -->
+              <div class="product-deals">
+                <!-- item sale -->
+                <div class="product-deals_content">
+                  <p>name</p>
+                  <p>sale ? %</p>
+                  <button>Detail</button>
+                </div>
+
+                <!-- item sale -->
+                <div class="product-deals_content">
+                  <p>name</p>
+                  <p>sale ? %</p>
+                  <button>Detail</button>
+                </div>
+
+                <!-- item sale -->
+                <div class="product-deals_content">
+                  <p>name</p>
+                  <p>sale ? %</p>
+                  <button>Detail</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
 
-      <!-- Main -->
-      <div class="main">
-        <div class="products">
-          <!-- banner -->
-          <div class="banner">
-            <img class="banner-img" src="/client/image/banner.jpg" alt="" />
-            <div class="banner-content">
-              <p>NEW COLLECTION</p>
-              <h3>Make It</h3>
-              <h1>Happen.</h1>
-              <p>Your journey, your rules, your victory.</p>
-              <button class="btn-show">SHOP NOW</button>
-            </div>
-
-            <div class="banner-service">
-              <div class="service_item">
-                <i class="ri-truck-line"></i>
-                <p>Fast Delivery</p>
-              </div>
-
-              <div class="service_item">
-                <i class="ri-secure-payment-line"></i>
-                <p>Secure Payment</p>
-              </div>
-
-              <div class="service_item">
-                <i class="ri-refresh-line"></i>
-                <p>Easy Returns</p>
-              </div>
-
-              <div class="service_item">
-                <i class="ri-customer-service-2-line"></i>
-                <p>24/7 Support</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- category danh mục sản phẩm. Phân loại kiểu giày-->
-          <div class="categories">
-            <div class="categories_title">
-              Categories
-            </div>
-            <div class="categories_list">
-              <!-- chắc là 5 cái -->
-              <!-- item -->
-              <div class="categories-item">
-                <img class="category-img" src="./image/categories glasses.jpg" alt="">
-                <div class="name">GLASSES</div>
-                <button class="btn-categories" data-category="">SHOP NOW</button>
-              </div>
-
-              <!-- item -->
-              <div class="categories-item">
-                <img class="category-img" src="./image/categories shoes.jpg" alt="">
-                <div class="name">SHOES</div>
-                <button class="btn-categories" data-category="">SHOP NOW</button>
-              </div>
-
-              <!-- item -->
-              <div class="categories-item">
-                <img class="category-img" src="./image/categories jaket.jpg" alt="">
-                <div class="name">JACKET</div>
-                <button class="btn-categories" data-category="">SHOP NOW</button>
-              </div>
-
-              <!-- item -->
-              <div class="categories-item">
-                <img class="category-img" src="./image/categories hat.jpg" alt="">
-                <div class="name">HAT</div>
-                <button class="btn-categories" data-category="">SHOP NOW</button>
-              </div>
-
-              <!-- item -->
-              <div class="categories-item">
-                <img class="category-img" src="./image/categories shirt.jpg" alt="">
-                <div class="name">SHIRT</div>
-                <button class="btn-categories" data-category="">SHOP NOW</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- feature sản phẩm nổi bật-->
-          <div class="featured">
-            <!-- item -->
-            <div class="product-item">
-              <div class="name"></div>
-              <button class="btn-detail" data-id="">Detail</button>
-              <div class="product-item_actions">
-                <button class="btn-addCart">Add to cart</button>
-                <button class="btn-buy">Buy <i></i></button>
-              </div>
-            </div>
-
-            <!-- item -->
-            <div class="product-item">
-              <div class="name"></div>
-              <button class="btn-detail" data-id="">Detail</button>
-              <div class="product-item_actions">
-                <button class="btn-addCart">Add to cart</button>
-                <button class="btn-buy">Buy <i></i></button>
-              </div>
-            </div>
-
-            <!-- item -->
-            <div class="product-item">
-              <div class="name"></div>
-              <button class="btn-detail" data-id="">Detail</button>
-              <div class="product-item_actions">
-                <button class="btn-addCart">Add to cart</button>
-                <button class="btn-buy">Buy <i></i></button>
-              </div>
-            </div>
-
-            <!-- item -->
-            <div class="product-item">
-              <div class="name"></div>
-              <button class="btn-detail" data-id="">Detail</button>
-              <div class="product-item_actions">
-                <button class="btn-addCart">Add to cart</button>
-                <button class="btn-buy">Buy <i></i></button>
-              </div>
-            </div>
-          </div>
-
-          <!-- hiện sản phẩm sale -->
-          <div class="deals">
-            <!-- 3 cái thôi -->
-            <div class="product-deals">
-              <!-- item sale -->
-              <div class="product-deals_content">
-                <p>name</p>
-                <p>sale ? %</p>
-                <button>Detail</button>
-              </div>
-
-              <!-- item sale -->
-              <div class="product-deals_content">
-                <p>name</p>
-                <p>sale ? %</p>
-                <button>Detail</button>
-              </div>
-
-              <!-- item sale -->
-              <div class="product-deals_content">
-                <p>name</p>
-                <p>sale ? %</p>
-                <button>Detail</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- footer -->
-      <footer>
-        <!-- suy nghĩ đi -->
-        <!-- social: mạng xã hội, liên kết đến trang -->
-        <!-- 
+        <!-- footer -->
+        <footer>
+          <!-- suy nghĩ đi -->
+          <!-- social: mạng xã hội, liên kết đến trang -->
+          <!-- 
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-tiktok"></i>
             -->
-        <div class="social">
-          <!-- logo -->
-          <div class="social_logo">
-            <p>Market</p>
-          </div>
+          <div class="social">
+            <!-- logo -->
+            <div class="social_logo">
+              <p>Market</p>
+            </div>
 
-          <!-- introduce -->
-          <div class="social_introduce">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            quas esse sequi minus illum earum facere. A pariatur est
-            doloremque!
-          </div>
+            <!-- introduce -->
+            <div class="social_introduce">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+              quas esse sequi minus illum earum facere. A pariatur est
+              doloremque!
+            </div>
 
-          <!-- links -->
-          <div class="social_links">
-            <div class="link_item">
-              <i>instagam</i>
-              <i>facebook</i>
-              <i>youtube</i>
-              <i>tiktok</i>
+            <!-- links -->
+            <div class="social_links">
+              <div class="link_item">
+                <i>instagam</i>
+                <i>facebook</i>
+                <i>youtube</i>
+                <i>tiktok</i>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- company: vể công ty -->
-        <div class="company">
-          <!-- company title -->
-          <div class="company_title">Company</div>
+          <!-- company: vể công ty -->
+          <div class="company">
+            <!-- company title -->
+            <div class="company_title">Company</div>
 
-          <!-- company item -->
-          <div class="company_item">About Us</div>
-          <div class="company_item">Careers</div>
-          <div class="company_item">News</div>
-          <div class="company_item">Contact</div>
-          <div class="company_item">Blog</div>
-        </div>
+            <!-- company item -->
+            <div class="company_item">About Us</div>
+            <div class="company_item">Careers</div>
+            <div class="company_item">News</div>
+            <div class="company_item">Contact</div>
+            <div class="company_item">Blog</div>
+          </div>
 
-        <!-- help: hỗ trợ khách hàng -->
-        <div class="help">
-          <!-- help title -->
-          <div class="help_title">Help Center</div>
+          <!-- help: hỗ trợ khách hàng -->
+          <div class="help">
+            <!-- help title -->
+            <div class="help_title">Help Center</div>
 
-          <!-- help item -->
-          <div class="help_item">FAQ</div>
-          <div class="help_item">Posting Guide</div>
-          <div class="help_item">Refund Policy</div>
-          <div class="help_item">Report Content</div>
-        </div>
+            <!-- help item -->
+            <div class="help_item">FAQ</div>
+            <div class="help_item">Posting Guide</div>
+            <div class="help_item">Refund Policy</div>
+            <div class="help_item">Report Content</div>
+          </div>
 
-        <!-- contact: liên hệ -->
-        <div class="contact">
-          <p class="email">Email: support@marketplace.com</p>
-          <p class="phone">Phone: +84 123 456 789</p>
-          <p class="address">Address: Ho Chi Minh City, Vietnam.</p>
+          <!-- contact: liên hệ -->
+          <div class="contact">
+            <p class="email">Email: support@marketplace.com</p>
+            <p class="phone">Phone: +84 123 456 789</p>
+            <p class="address">Address: Ho Chi Minh City, Vietnam.</p>
 
-          <!-- copyright -->
-          <p class="coppyright">© 2026 MarketPlace. All rights reserved.</p>
-        </div>
-      </footer>
+            <!-- copyright -->
+            <p class="coppyright">© 2026 MarketPlace. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
     </div>
-  </div>
-  <!--  -->
-</body>
-<!-- script -->
-<script src="./js/app.js"></script>
-
+    <!--  -->
+  </body>
+  <!-- script -->
+  <script src="./js/app.js"></script>
 </html>
