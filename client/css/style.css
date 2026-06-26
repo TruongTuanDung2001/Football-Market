@@ -407,12 +407,15 @@ header .actions .action_cart a:hover + #cart_count{
   inset: 0;
   background: rgba(0,0,0,0.3);
   z-index: 2;
+  border-radius: 4px;
 }
 
 .main .products .featured .product-item .img:hover::before{
   background: rgba(0,0,0,0);
   z-index: 0;
   transition: .3s;
+  border-radius: 4px;
+
 }
 
 .main .products .featured .product-item .img img{
@@ -475,4 +478,87 @@ header .actions .action_cart a:hover + #cart_count{
   color: var(--red);
   transition: .3s;
   transform: translateY(-2px);
+}
+
+
+/* DEALS */
+.main .products .deals{
+  width: 100vw;
+  padding: 40px;
+}
+
+.main .products .deals .deals-title{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding: 60px 0px;
+}
+
+.main .products .deals .deals-list{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.main .products .deals .deals-list .product-deals_content{
+  width: calc(100vw / 3);
+  height: 300px;
+  position: relative;
+}
+
+/* image */
+.main .products .deals .deals-list .product-deals_content .image{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.main .products .deals .deals-list .product-deals_content .image::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 3;
+  border-radius: 4px;
+}
+
+.main .products .deals .deals-list .product-deals_content .image img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 4px;
+}
+
+.main .products .deals .deals-list .product-deals_content .content{
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  color: var(--light-gray);
+  z-index: 3;
+  background: rgba(0,0,0,0.3);
+  padding: 25px;
+  border-radius: 4px;
+}
+
+.main .products .deals .deals-list .product-deals_content .content p{
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.main .products .deals .deals-list .product-deals_content .content .sale{
+  color: lightgreen;
+}
+
+.main .products .deals .deals-list .product-deals_content .content button{
+  background-color: var(--black);
+  color: var(--light-gray);
+}
+
+.main .products .deals .deals-list .product-deals_content .content button:hover{
+  color: var(--red);
+  transform: translateY(-2px);
+  transition: .3s;
 }
