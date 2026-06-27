@@ -10,3 +10,10 @@ window.addEventListener('scroll', () => {
 
 });
 
+// btn-detail to detail page (not yet data-id).
+const btnDetail = document.querySelectorAll('.btn-detail');
+btnDetail.forEach(btn => {
+    btn.addEventListener('click', function(){
+        window.location.href = 'detail.html';
+    });
+});
