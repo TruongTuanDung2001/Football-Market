@@ -1,16 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail</title>
     <!-- links -->
-    <link rel="stylesheet" href="./css/detail.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./css/detail.css" />
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
 
-<!-- script -->
- <script src="./js/pages/detail.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <div class="layout">
+        <!-- header -->
+        <header>
+          <!-- logo -->
+          <div class="logo">
+            <a href="#">
+              <img src="./image/logo.png" alt="" />
+              Market
+            </a>
+          </div>
+
+          <!-- menu -->
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="#">HOME</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">SHOP</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">COLLECTIONS</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">ABOUT US</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">CONTACT</a>
+            </li>
+          </ul>
+
+          <!-- actions -->
+          <div class="actions">
+            <!-- search -->
+            <div class="action_search">
+              <input type="text" class="input_search" />
+              <a href="#">
+                <i class="fa-brands fa-sistrix"></i>
+              </a>
+            </div>
+
+            <!-- user -->
+            <div class="action_user">
+              <a href="#">
+                <i class="fa-regular fa-user"></i>
+              </a>
+            </div>
+
+            <!-- cart -->
+            <div class="action_cart">
+              <a href="#">
+                <i class="ri-shopping-cart-line"></i>
+              </a>
+              <p id="cart_count">0</p>
+            </div>
+          </div>
+        </header>
+
+
+        
+
+      </div>
+    </div>
+  </body>
+
+  <!-- script -->
+  <script src="./js/pages/detail.js"></script>
 </html>
