@@ -1,0 +1,193 @@
+/* ======
+  RESET
+=========*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =====
+  ROOT
+======== */
+
+:root {
+  /* Main Colors */
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --gray: #777777;
+  --dark-gray: #333333;
+  --black: #111111;
+  --red: #e53935;
+
+  /* Shadow */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+  /* Border */
+  --border-color: #e5e5e5;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* Container */
+  --container-width: 1200px;
+
+  /* header */
+  --height-header: 135px;
+}
+
+/* =====
+  GLOBAL
+========*/
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+/* HEADER */
+.app {
+}
+.app .layout {
+}
+
+/* header */
+.app .layout header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  background-color: var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* logo */
+header .logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+header .logo a img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+/* menu */
+header .menu {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+header .menu .menu-item a:hover {
+  color: var(--red);
+  transform: translateY(-2px);
+  transition: 0.3;
+}
+
+/* actions */
+header .actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+header .actions i {
+  font-size: 20px;
+}
+
+header .actions i:hover {
+  color: var(--red);
+  transition: 0.3s;
+}
+
+/* search */
+header .actions .action_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+header .actions .action_search .input_search {
+  height: 30px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* cart */
+header .actions .action_cart {
+  position: relative;
+}
+
+header .actions .action_cart #cart_count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #111111;
+  color: #fff;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Sử dụng keyframes cho icon cart */
+header .actions .action_cart a:hover + #cart_count {
+  animation: float 0.5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
