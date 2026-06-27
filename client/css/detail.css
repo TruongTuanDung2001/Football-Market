@@ -191,3 +191,113 @@ header .actions .action_cart a:hover + #cart_count {
     transform: translateY(-8px);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+
+footer {
+  margin-top: 80px;
+  padding: 60px 8%;
+  background: #111;
+  color: #ddd;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 50px;
+}
+
+/* SOCIAL */
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social_logo p {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.social_introduce {
+  color: #999;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.link_item {
+  display: flex;
+  gap: 20px;
+}
+
+.link_item i {
+  font-size: 26px;
+  color: #bbb;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.link_item i:hover {
+  color: #e53935;
+  transform: translateY(-4px) scale(1.1);
+}
+
+/* company */
+.company,
+.help {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.company_title,
+.help_title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.company_item,
+.help_item {
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.company_item:hover,
+.help_item:hover {
+  color: #e53935;
+  padding-left: 6px;
+}
+
+/* contact */
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact p {
+  color: #aaa;
+  line-height: 1.7;
+}
+
+.coppyright {
+  margin-top: 25px;
+  color: #666;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
