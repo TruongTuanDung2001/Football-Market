@@ -192,6 +192,180 @@ header .actions .action_cart a:hover + #cart_count {
   }
 }
 
+/* detail */
+.main-detail {
+  width: 100%;
+  padding: 0 40px;
+}
+
+.main-detail .detail-title{
+    text-align: center;
+    padding: 40px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.main-detail .detail-content {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-bottom: 100px;
+}
+
+/* image */
+.main-detail .detail-content .detail-image {
+  width: 30%;
+}
+.main-detail .detail-content .detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+}
+
+/* info */
+.main-detail .detail-content .detail-info {
+  width: 30%;
+}
+
+.main-detail .detail-content .detail-info .name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.main-detail .detail-content .detail-info .price {
+  font-size: 22px;
+}
+
+.main-detail .detail-content .detail-info .category {
+  font-size: 24px;
+}
+
+.main-detail .detail-content .detail-info .description {
+  font-size: 18px;
+}
+
+.main-detail .detail-content .detail-info .actions {
+}
+.main-detail .detail-content .detail-info .actions .btn-buy {
+  background: var(--black);
+  color: var(--light-gray);
+}
+
+.main-detail .detail-content .detail-info .actions .btn-addCart {
+  background: var(--gray);
+  color: var(--light-gray);
+  margin-left: 20px;
+}
+
+.main-detail .detail-content .detail-info .actions .btn-buy:hover
+,.main-detail .detail-content .detail-info .actions .btn-addCart:hover {
+  color: var(--red);
+  background: var(--black);
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
+
+.main-detail .detail-content .detail-info .name,
+.main-detail .detail-content .detail-info .price,
+.main-detail .detail-content .detail-info .category,
+.main-detail .detail-content .detail-info .description,
+.main-detail .detail-content .detail-info .actions {
+  padding: 10px 0;
+}
+
+/* Detail related */
+.main-detail .detail-related .related_title{
+    text-align: center;
+    padding: 40px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.main-detail .detail-related .related_list {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 0px 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* related item */
+.main-detail .detail-related .related_list .related-item {
+  width: 30%;
+  height: 300px;
+  border-radius: 4px;
+  margin-bottom: 100px;
+  /*  */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /*flex nhưng mà các phân tử nằm dọc */
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  /*  */
+  position: relative;
+  cursor: pointer;
+}
+
+/* image */
+.main-detail .detail-related .related_list .related-item img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 4px;
+}
+
+/* lớp phủ before */
+.main-detail .detail-related .related_list .related-item::before {
+  content: "";
+  position: absolute;
+  inset: 0; /*Thay cho: t0 - b0 - l0 - r0*/
+  z-index: 2;
+  border-radius: 4px;
+}
+
+.main-detail .detail-related .related_list .related-item:hover::before {
+  background: rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+}
+
+/* ẩn đi - hiện lên */
+.main-detail .detail-related .related_list .related-item:hover .name,
+.main-detail .detail-related .related_list .related-item:hover .btn-related {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.main-detail .detail-related .related_list .related-item .name {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--light-gray);
+  z-index: 3;
+  opacity: 0;
+}
+
+/* related button */
+.main-detail .detail-related .related_list .related-item .btn-related {
+  background-color: var(--black);
+  color: var(--light-gray);
+  z-index: 3;
+  opacity: 0;
+}
+
+.main-detail .detail-related .related_list .related-item .btn-related:hover {
+  transform: translateY(-2px);
+  color: var(--red);
+  transition: 0.3;
+}
+
 /* footer */
 
 footer {
@@ -289,88 +463,4 @@ footer {
   font-size: 14px;
   border-top: 1px solid #333;
   padding-top: 20px;
-}
-
-
-
-
-/* Detail related */
-.main-detail .detail-related .related_list {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  padding: 0px 40px;
-}
-
-/* related item */
-.main-detail .detail-related .related_list .related-item {
-  width: 30%;
-  height: 300px;
-  border-radius: 4px;
-  /*  */
-  text-align: center;
-  display: flex;
-  flex-direction: column; /*flex nhưng mà các phân tử nằm dọc */
-  justify-content: center;
-  align-items: center;
-  gap: 26px;
-  /*  */
-  position: relative;
-  cursor: pointer;
-}
-
-/* image */
-.main-detail .detail-related .related_list .related-item img {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 4px;
-}
-
-/* lớp phủ before */
-.main-detail .detail-related .related_list .related-item::before {
-  content: "";
-  position: absolute;
-  inset: 0; /*Thay cho: t0 - b0 - l0 - r0*/
-  z-index: 2;
-  border-radius: 4px;
-}
-
-.main-detail .detail-related .related_list .related-item:hover::before {
-  background: rgba(0, 0, 0, 0.6);
-  transition: 0.3s;
-}
-
-/* ẩn đi - hiện lên */
-.main-detail .detail-related .related_list .related-item:hover .name,
-.main-detail .detail-related .related_list .related-item:hover .btn-related {
-  opacity: 1;
-  transition: 0.5s;
-}
-
-.main-detail .detail-related .related_list .related-item .name {
-  font-size: 22px;
-  font-weight: bold;
-  color: var(--light-gray);
-  z-index: 3;
-  opacity: 0;
-}
-
-/* category button */
-.main-detail .detail-related .related_list .related-item .btn-related {
-  background-color: var(--black);
-  color: var(--light-gray);
-  z-index: 3;
-  opacity: 0;
-}
-
-.main-detail .detail-related .related_list .related-item .btn-related:hover {
-  transform: translateY(-2px);
-  color: var(--red);
-  transition: 0.3;
 }
