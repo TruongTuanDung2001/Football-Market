@@ -379,7 +379,7 @@ header .actions .action_cart a:hover + #cart_count {
   .categories_list
   .categories-item
   .btn-categories:hover {
-  margin-bottom: 2px;
+  transform: translateY(-2px);
   color: var(--red);
   transition: 0.3;
 }
