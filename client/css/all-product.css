@@ -200,11 +200,8 @@ header .actions .action_cart a:hover + #cart_count {
     font-weight: bold;
     text-align: center;
 }
-/* CATE */
-/* ===========================
-   CATEGORIES
-=========================== */
 
+/* CATEGORY */
 .all_products-categories{
     display: flex;
     gap: 15px;
@@ -221,68 +218,43 @@ header .actions .action_cart a:hover + #cart_count {
 
 .categories-item{
     padding: 10px 22px;
-
     background: #fff;
-
     border: 1px solid #ddd;
-
     border-radius: 999px;
-
     color: #444;
-
     font-size: 15px;
     font-weight: 500;
-
     cursor: pointer;
-
     transition: .3s;
 }
 
-/* Hover */
-
 .categories-item:hover{
-    background: #111;
-    color: #fff;
-    border-color: #111;
+    background: var(--black);
+    color: var(--red);
 }
 
-/* Category đang được chọn */
 
 .categories-item.active{
-    background: #e63946;
-    color: #fff;
-    border-color: #e63946;
+  color: var(--red);
 }
 
-/* =========================
-   CONTENT
-========================= */
-
+/* content */
 .all_product-content{
     width: 90%;
     margin: 40px auto;
-
     display: flex;
     gap: 30px;
     align-items: flex-start;
 }
 
-/* =========================
-   FILTER
-========================= */
-
+/* filter */
 .all_products-filter{
     width: 260px;
     flex-shrink: 0;
-
     background: #fff;
-
     padding: 20px;
-
     border-radius: 15px;
-
     box-shadow: 0 5px 20px rgba(0,0,0,.08);
-
     position: sticky;
     top: 100px;
 }
@@ -290,66 +262,47 @@ header .actions .action_cart a:hover + #cart_count {
 .filter-item{
     display: flex;
     flex-direction: column;
-
     margin-bottom: 20px;
 }
 
 .filter-item label{
     font-size: 15px;
     font-weight: 600;
-
     margin-bottom: 8px;
-
     color: #333;
 }
 
 .filter-item select{
     height: 45px;
-
     border: 1px solid #ddd;
-
     border-radius: 10px;
-
     padding: 0 12px;
-
     outline: none;
-
     cursor: pointer;
-
     transition: .3s;
 }
 
 .filter-item select:focus{
-    border-color: #e63946;
+    border-color: var(--red);
 }
 
 .btn-filter{
     width: 100%;
     height: 45px;
-
     border: none;
-
     border-radius: 10px;
-
     background: #111;
-
     color: white;
-
     font-weight: 600;
-
     cursor: pointer;
-
     transition: .3s;
 }
 
 .btn-filter:hover{
-    background: #e63946;
+    color: var(--red);
 }
 
-/* =========================
-   SHOW PRODUCT
-========================= */
-
+/* show product */
 .all_products-show{
     flex: 1;
 }
@@ -357,53 +310,35 @@ header .actions .action_cart a:hover + #cart_count {
 .show-title{
     font-size: 32px;
     font-weight: 700;
-
     margin-bottom: 30px;
-
     color: #222;
 }
 
-/* =========================
-   PRODUCT GRID
-========================= */
-
+/* product list */
 .product-list{
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 20px;
 }
 
-/* =========================
-   PRODUCT CARD
-========================= */
-
+/* card */
 .product-card{
     background: #fff;
-
     border-radius: 15px;
-
     overflow: hidden;
-
     box-shadow: 0 5px 20px rgba(0,0,0,.08);
-
     transition: .3s;
 }
 
 .product-card:hover{
     transform: translateY(-6px);
-
     box-shadow: 0 12px 30px rgba(0,0,0,.15);
 }
 
 .product-card img{
     width: 100%;
-
     height: 220px;
-
     object-fit: cover;
-
     display: block;
 }
 
@@ -413,42 +348,29 @@ header .actions .action_cart a:hover + #cart_count {
 
 .name{
     font-size: 18px;
-
     font-weight: 600;
-
     color: #222;
-
     margin-bottom: 10px;
 }
 
 .price{
     font-size: 22px;
-
     font-weight: 700;
-
-    color: #e63946;
-
+    color: var(--red);
     margin-bottom: 15px;
 }
 
 .btn-detail{
     display: block;
-
     text-align: center;
-
     text-decoration: none;
-
     padding: 10px;
-
     background: #111;
-
     color: white;
-
     border-radius: 8px;
-
     transition: .3s;
 }
 
 .btn-detail:hover{
-    background: #e63946;
+    color: var(--red);
 }
