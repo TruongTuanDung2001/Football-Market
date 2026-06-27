@@ -90,7 +90,6 @@ button {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  border: 1px solid #333;
   padding: 30px;
   background-color: var(--border-color);
   position: sticky;
