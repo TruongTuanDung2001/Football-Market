@@ -1,15 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Page</title>
     <!-- links -->
-     <link rel="stylesheet" href="/client/css/dashboard/admin.css">
-</head>
-<body>
-    
-</body>
-<!-- scripts -->
- <script src="/client/js/pages/dashboard/admin.js"></script>
+    <link rel="stylesheet" href="/client/css/dashboard/admin.css" />
+  </head>
+  <body>
+    <div class="admin">
+      <div class="layout">
+        <!-- sidebar -->
+        <aside class="sidebar">
+          <div class="logo">
+            <h2>Football Market</h2>
+          </div>
+
+          <ul class="menu">
+            <li class="active">
+              <i class="fa-solid fa-house"></i>
+              <span>Dashboard</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-box"></i>
+              <span>Products</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-users"></i>
+              <span>Users</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-newspaper"></i>
+              <span>Posts</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-comments"></i>
+              <span>Chats</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-gear"></i>
+              <span>Settings</span>
+            </li>
+          </ul>
+
+          <div class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+          </div>
+        </aside>
+
+        <!-- main -->
+        <div class="main">
+          <header class="header">
+            <div class="header-left">
+              <h2>Dashboard</h2>
+            </div>
+
+            <div class="header-right">
+              <input type="text" placeholder="Search..." />
+
+              <div class="admin-info">
+                <img src="https://i.pravatar.cc/40" alt="" />
+
+                <span>Admin</span>
+              </div>
+            </div>
+          </header>
+
+          <main class="content">
+            <!-- Sau này load nội dung -->
+            <h2>Welcome Admin 👋</h2>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- scripts -->
+  <script src="/client/js/pages/dashboard/admin.js"></script>
 </html>

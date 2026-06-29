@@ -1,0 +1,146 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:#f4f6f9;
+}
+
+/* Layout */
+.layout{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+.sidebar{
+    width:260px;
+    background:#0f172a;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:25px 20px;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.logo h2{
+    color:#3b82f6;
+    font-size:24px;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.25s;
+    margin-bottom:8px;
+    color:#d1d5db;
+}
+
+.menu li:hover{
+    background:#1e293b;
+    color:#ef4444;
+}
+
+.menu li.active{
+    background:#2563eb;
+    color:#fff;
+}
+
+.logout{
+    display:flex;
+    gap:15px;
+    padding:14px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.25s;
+    color:#d1d5db;
+}
+
+.logout:hover{
+    background:#1e293b;
+    color:#ef4444;
+}
+
+/* Main */
+.main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Header */
+
+.header{
+    height:75px;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    border-bottom:1px solid #ddd;
+}
+
+.header-left h2{
+    color:#111827;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.header-right input{
+    width:260px;
+    padding:10px 16px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+}
+
+.header-right input:focus{
+    border-color:#2563eb;
+}
+
+.admin-info{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.admin-info img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+}
+
+.admin-info span{
+    font-weight:600;
+}
+
+/* Content */
+.content{
+    flex:1;
+
+    padding:30px;
+
+    overflow-y:auto;
+
+    background:#f4f6f9;
+}
