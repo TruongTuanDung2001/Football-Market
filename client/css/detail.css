@@ -200,7 +200,7 @@ header .actions .action_cart a:hover + #cart_count {
 
 .main-detail .detail-title{
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     font-size: 36px;
     font-weight: bold;
 }
@@ -208,13 +208,19 @@ header .actions .action_cart a:hover + #cart_count {
 .main-detail .detail-content {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 100px;
-  margin-bottom: 100px;
+  /*  */
+  margin: 0 auto 10px;
+  width: 1200px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 50px 0;
 }
 
 /* image */
 .main-detail .detail-content .detail-image {
-  width: 30%;
+  width: 40%;
 }
 .main-detail .detail-content .detail-image img {
   width: 100%;
@@ -226,7 +232,7 @@ header .actions .action_cart a:hover + #cart_count {
 
 /* info */
 .main-detail .detail-content .detail-info {
-  width: 30%;
+  width: 40%;
 }
 
 .main-detail .detail-content .detail-info .name {
@@ -236,14 +242,20 @@ header .actions .action_cart a:hover + #cart_count {
 
 .main-detail .detail-content .detail-info .price {
   font-size: 22px;
+  /* color: var(--light-gray); */
+  color: var(--red);
+  font-weight: 500;
 }
 
 .main-detail .detail-content .detail-info .category {
   font-size: 24px;
+  color: var(--black);
+  font-weight:600;
 }
 
 .main-detail .detail-content .detail-info .description {
   font-size: 18px;
+  color: var(--light-gray);
 }
 
 .main-detail .detail-content .detail-info .actions {
