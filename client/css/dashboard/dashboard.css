@@ -1,0 +1,64 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.page-title h2 {
+  font-size: 30px;
+  color: #111827;
+}
+
+.page-title p {
+  color: #777;
+  margin-top: 5px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card span {
+  font-size: 32px;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.recent {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.recent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.recent th,
+.recent td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.recent tr:hover {
+  background: #f7f7f7;
+}

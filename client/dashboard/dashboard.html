@@ -1,11 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Page</title>
-</head>
-<body>
-    
-</body>
+    <!-- links -->
+     <link rel="stylesheet" href="/client/css/dashboard/dashboard.css">
+  </head>
+  <body>
+    <div class="dashboard-page">
+      <div class="page-title">
+        <h2>Dashboard</h2>
+        <p>Welcome back, Admin 👋</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Total Products</h3>
+          <span>120</span>
+        </div>
+
+        <div class="card">
+          <h3>Total Users</h3>
+          <span>58</span>
+        </div>
+
+        <div class="card">
+          <h3>Total Posts</h3>
+          <span>235</span>
+        </div>
+
+        <div class="card">
+          <h3>Revenue</h3>
+          <span>$12,500</span>
+        </div>
+      </div>
+
+      <div class="recent">
+        <h3>Recent Activity</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Action</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Dũng</td>
+              <td>Added a new product</td>
+              <td>2 minutes ago</td>
+            </tr>
+
+            <tr>
+              <td>Admin</td>
+              <td>Deleted a post</td>
+              <td>10 minutes ago</td>
+            </tr>
+
+            <tr>
+              <td>Huy</td>
+              <td>Updated a product</td>
+              <td>30 minutes ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </body>
+  <!-- script -->
+   <script src="/client/js/pages/dashboard/dashboard.js"></script>
 </html>
