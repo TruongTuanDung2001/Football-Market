@@ -1,0 +1,236 @@
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.page-header p{
+
+    color:#777;
+
+    margin-top:5px;
+
+}
+
+/* btn add */
+.btn-add{
+
+    padding:12px 20px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.btn-add:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* toolbar */
+.toolbar{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.toolbar input,
+.toolbar select{
+
+    padding:10px 15px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    outline:none;
+
+}
+
+.toolbar input{
+
+    width:300px;
+
+}
+
+/* table */
+.table-container{
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#f8fafc;
+
+}
+
+th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#555;
+
+}
+
+td{
+
+    padding:18px;
+
+    border-top:1px solid #eee;
+
+}
+
+tbody tr{
+
+    transition:.25s;
+
+}
+
+tbody tr:hover{
+
+    background:#f7f7f7;
+
+}
+
+/* image */
+.product-image{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+/* status */
+.status{
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.in-stock{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+.low-stock{
+
+    background:#fef3c7;
+
+    color:#d97706;
+
+}
+
+.sold-out{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+/* action */
+.action{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.action button{
+
+    width:36px;
+
+    height:36px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.view{
+
+    background:#e5e7eb;
+
+}
+
+.edit{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+.delete{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+.action button:hover{
+
+    transform:scale(1.08);
+
+}

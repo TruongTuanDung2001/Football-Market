@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <!-- links -->
+    <link rel="stylesheet" href="/client/css/dashboard/products.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--  -->
+    <div class="products-page">
+      <div class="page-header">
+        <div>
+          <h2>Products</h2>
+          <p>Manage all products in your marketplace.</p>
+        </div>
+
+        <button class="btn-add">+ Add Product</button>
+      </div>
+
+      <div class="toolbar">
+        <input type="text" placeholder="🔍 Search product..." />
+
+        <select>
+          <option>All Categories</option>
+          <option>Shoes</option>
+          <option>Ball</option>
+          <option>Shirt</option>
+        </select>
+
+        <select>
+          <option>All Status</option>
+          <option>In Stock</option>
+          <option>Low Stock</option>
+          <option>Sold Out</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="product-list">
+            <!--  -->
+            <tr>
+              <td>
+                <img class="product-image" src="" />
+              </td>
+
+              <td>Nike Football</td>
+
+              <td>Ball</td>
+
+              <td>500.000đ</td>
+
+              <td>20</td>
+
+              <td>
+                <span class="status in-stock"> In Stock </span>
+              </td>
+
+              <td>
+                <div class="action">
+                  <button class="view">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+
+                  <button class="edit">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+
+                  <button class="delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
