@@ -1,44 +1,76 @@
-    {
-  "users": [
+{
+  "products": [
     {
       "id": 1,
-      "name": "Dung",
-      "role": "user"
+      "name": "Nike Mercurial Vapor XV TF",
+      "price": 1200000,
+      "sale": 15,
+      "quantity": 18,
+      "category": "Shoes",
+      "image": "https://picsum.photos/300",
+      "description": "Nike Mercurial TF chính hãng.",
+      "createdAt": "2026-06-30T09:30:00",
+      "updatedAt": "2026-06-30T09:30:00"
     },
     {
       "id": 2,
-      "name": "Admin",
+      "name": "Adidas Champions League Ball",
+      "price": 850000,
+      "sale": 0,
+      "quantity": 12,
+      "category": "Ball",
+      "image": "https://picsum.photos/301",
+      "description": "Bóng thi đấu Adidas.",
+      "createdAt": "2026-06-30T10:00:00",
+      "updatedAt": "2026-06-30T10:00:00"
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "username": "admin01",
+      "password": "123456",
       "role": "admin"
-    }
-  ],
-
-  "posts": [
+    },
     {
-      "id": 1,
-      "authorId": 1,
-      "image": "https://picsum.photos/300",
-
-      "caption": "Nike Mercurial TF 1tr2",
-
-      "status": "approved",
-
-      "createdAt": "2026-06-23"
-    }
-  ],
-
-  "messages": [
+      "id": 2,
+      "username": "admin02",
+      "password": "123456",
+      "role": "admin"
+    },
     {
-      "id": 1,
+      "id": 3,
+      "username": "admin03",
+      "password": "123456",
+      "role": "admin"
+    },
 
-      "postId": 1,
+    {
+      "id": 4,
+      "username": "dung",
+      "password": "123456",
+      "role": "user",
+      "fullName": "Truong Tuan Dung",
+      "email": "dung@gmail.com",
+      "phone": "0988888888",
+      "cart": [
+        {
+          "productId": 1,
+          "quantity": 2
+        }
+      ]
+    },
 
-      "senderId": 1,
-
-      "receiverId": 2,
-
-      "text": "Con khong",
-
-      "createdAt": "10:20"
+    {
+      "id": 5,
+      "username": "minh",
+      "password": "123456",
+      "role": "user",
+      "fullName": "Nguyen Van Minh",
+      "email": "minh@gmail.com",
+      "phone": "0911111111",
+      "cart": []
     }
   ]
 }

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts Page</title>
+    <!-- links -->
+    <link rel="stylesheet" href="/client/css/dashboard/posts.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="posts-page">
+      <div class="page-header">
+        <div>
+          <h2>Posts</h2>
+          <p>Manage all user posts.</p>
+        </div>
+
+        <button class="btn-add">
+          <i class="fa-solid fa-plus"></i>
+          New Post
+        </button>
+      </div>
+
+      <div class="toolbar">
+        <input type="text" placeholder="🔍 Search post..." />
+
+        <select>
+          <option>All Status</option>
+          <option>Approved</option>
+          <option>Pending</option>
+          <option>Rejected</option>
+        </select>
+
+        <select>
+          <option>Newest</option>
+          <option>Oldest</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>User</th>
+              <th>Caption</th>
+              <th>Created</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <img class="post-image" src="https://placehold.co/80x80" />
+              </td>
+
+              <td>
+                <div class="user-info">
+                  <img class="avatar" src="https://i.pravatar.cc/45?img=8" />
+
+                  <span>Trương Tuấn Dũng</span>
+                </div>
+              </td>
+
+              <td class="caption">Nike Mercurial Vapor XV TF - New 100%</td>
+
+              <td>30/06/2026</td>
+
+              <td>
+                <span class="status approved"> Approved </span>
+              </td>
+
+              <td>
+                <div class="action">
+                  <button class="view">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+
+                  <button class="approve">
+                    <i class="fa-solid fa-check"></i>
+                  </button>
+
+                  <button class="delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <!-- script -->
+  <script src="/client/js/pages/dashboard/posts.js"></script>
+</html>

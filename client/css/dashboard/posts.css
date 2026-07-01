@@ -1,0 +1,278 @@
+.posts-page{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+/* Header */
+
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.page-header h2{
+    font-size:30px;
+    color:#111827;
+    margin-bottom:5px;
+}
+
+.page-header p{
+    color:#6b7280;
+}
+
+/* Button */
+
+.btn-add{
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.btn-add:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* Toolbar */
+
+.toolbar{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.toolbar input,
+.toolbar select{
+
+    height:42px;
+
+    padding:0 15px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    outline:none;
+
+}
+
+.toolbar input{
+
+    width:320px;
+
+}
+
+/* Table */
+
+.table-container{
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 3px 15px rgba(0,0,0,.05);
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#f8fafc;
+
+}
+
+th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#6b7280;
+
+}
+
+td{
+
+    padding:18px;
+
+    border-top:1px solid #eee;
+
+}
+
+tbody tr:hover{
+
+    background:#f9fafb;
+
+}
+
+/* Post image */
+
+.post-image{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+/* User */
+
+.user-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.avatar{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+/* Caption */
+
+.caption{
+
+    max-width:280px;
+
+    color:#374151;
+
+    font-size:14px;
+
+}
+
+/* Status */
+
+.status{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.approved{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+.pending{
+
+    background:#fef3c7;
+
+    color:#d97706;
+
+}
+
+.rejected{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+/* Action */
+
+.action{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.action button{
+
+    width:36px;
+
+    height:36px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.action button:hover{
+
+    transform:scale(1.08);
+
+}
+
+.view{
+
+    background:#e5e7eb;
+
+}
+
+.approve{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+.delete{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
