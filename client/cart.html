@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" href="/client/css/cart.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- header -->
+    <header class="cart-header">
+      <div class="logo">
+        <a href="index.html">
+          <i class="fa-solid fa-futbol"></i>
+          Football Market
+        </a>
+      </div>
+
+      <nav class="cart-nav">
+        <a href="index.html">Home</a>
+        <a href="all-product.html">Products</a>
+        <a href="cart.html" class="active">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Cart
+        </a>
+      </nav>
+    </header>
+
+    <div class="cart-container">
+      <div class="cart-header">
+        <h1>Shopping Cart</h1>
+
+        <a href="index.html" class="continue">
+          <i class="fa-solid fa-arrow-left"></i>
+          Continue Shopping
+        </a>
+      </div>
+
+      <div class="cart-layout">
+        <!-- Product in cart -->
+        <div class="cart-items">
+          <div class="cart-item">
+            <img src="https://placehold.co/120x120" class="cart-image" />
+
+            <div class="item-info">
+              <h3>Nike Mercurial Vapor XV TF</h3>
+
+              <p>Football Shoes</p>
+
+              <div class="price">
+                <span class="old-price"> 1.200.000đ </span>
+
+                <span class="new-price"> 1.020.000đ </span>
+              </div>
+
+              <span class="sale"> -15% </span>
+            </div>
+
+            <div class="quantity">
+              <button>-</button>
+
+              <span>2</span>
+
+              <button>+</button>
+            </div>
+
+            <div class="remove">
+              <button>
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <img src="https://placehold.co/120x120" class="cart-image" />
+
+            <div class="item-info">
+              <h3>Adidas Champions League Ball</h3>
+
+              <p>Football Ball</p>
+
+              <div class="price">
+                <span class="new-price"> 850.000đ </span>
+              </div>
+            </div>
+
+            <div class="quantity">
+              <button>-</button>
+
+              <span>1</span>
+
+              <button>+</button>
+            </div>
+
+            <div class="remove">
+              <button>
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order summary -->
+        <div class="summary">
+          <h2>Order Summary</h2>
+
+          <div class="summary-row">
+            <span>Items</span>
+
+            <span>2</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+
+            <span>2.890.000đ</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Discount</span>
+
+            <span>-180.000đ</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Shipping</span>
+
+            <span>Free</span>
+          </div>
+
+          <hr />
+
+          <div class="summary-row total">
+            <span>Total</span>
+
+            <span>2.710.000đ</span>
+          </div>
+
+          <button class="checkout">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <p>© 2026 Football Market. All rights reserved.</p>
+
+      <div class="footer-link">
+        <!-- <a href="#">About</a>
+
+        <a href="#">Contact</a>
+
+        <a href="#">Privacy</a> -->
+      </div>
+    </footer>
+  </body>
+  <!-- script -->
+  <script src="/client/js/pages/cart.js"></script>
+</html>
