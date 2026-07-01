@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User page</title>
+    <!-- links -->
+    <link rel="stylesheet" href="/client/css/dashboard/users.css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="users-page">
+      <div class="page-header">
+        <div>
+          <h2>Users</h2>
+          <p>Manage all registered users.</p>
+        </div>
+
+        <button class="btn-add">+ Add User</button>
+      </div>
+
+      <div class="toolbar">
+        <input type="text" placeholder="🔍 Search user..." />
+
+        <select>
+          <option>All Roles</option>
+          <option>Admin</option>
+          <option>User</option>
+        </select>
+
+        <select>
+          <option>All Status</option>
+          <option>Active</option>
+          <option>Banned</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Avatar</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Joined</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <img class="avatar" src="https://i.pinimg.com/1200x/9e/47/34/9e4734c683170cd9b4137892c2e376b7.jpg" />
+              </td>
+
+              <td>Trương Tuấn Dũng</td>
+
+              <td>truongtuandung2001@gmail.com</td>
+
+              <td>
+                <span class="role admin"> Admin </span>
+              </td>
+
+              <td>24/06/2026</td>
+
+              <td>
+                <span class="status active"> Active </span>
+              </td>
+
+              <td>
+                <div class="action">
+                  <button class="view">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+
+                  <button class="edit">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+
+                  <button class="ban">
+                    <i class="fa-solid fa-user-slash"></i>
+                  </button>
+
+                  <button class="delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="/client/js/pages/dashboard/users.js"></script>
+</html>

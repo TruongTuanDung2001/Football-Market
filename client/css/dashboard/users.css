@@ -1,0 +1,205 @@
+/* Users page */
+.users-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header h2 {
+  font-size: 30px;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* Add button */
+.btn-add {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-add:hover {
+  background: #1d4ed8;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 15px;
+}
+
+.toolbar input,
+.toolbar select {
+  height: 42px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 15px;
+  outline: none;
+  font-size: 15px;
+}
+
+.toolbar input {
+  width: 320px;
+}
+
+.toolbar input:focus,
+.toolbar select:focus {
+  border-color: #2563eb;
+}
+
+/* Table */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f8fafc;
+}
+
+thead th {
+  padding: 18px;
+  text-align: left;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+tbody td {
+  padding: 18px;
+  border-top: 1px solid #ececec;
+  vertical-align: middle;
+}
+
+tbody tr {
+  transition: 0.25s;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Avatar */
+.avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Role */
+.role {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.role.admin {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.role.user {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Status */
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status.active {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status.banned {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Action */
+.action {
+  display: flex;
+  gap: 10px;
+}
+
+.action button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.action button:hover {
+  transform: scale(1.08);
+}
+
+.view {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.view:hover {
+  background: #d1d5db;
+}
+
+.edit {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.edit:hover {
+  background: #bfdbfe;
+}
+
+.ban {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.ban:hover {
+  background: #fed7aa;
+}
+
+.delete {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.delete:hover {
+  background: #fecaca;
+}
