@@ -681,3 +681,34 @@ footer {
   padding-top: 20px;
 }
 
+/* handle infor user */
+.app .layout header .actions .action_user{
+  position: relative;
+}
+
+.app .layout header .actions .action_user .infor_user{}
+.app .layout header .actions .action_user .infor_user:hover{
+  cursor: pointer;
+  color: var(--red);
+  transition: .3s;
+}
+
+.app .layout header .actions .action_user .logout{
+  position: absolute;
+  top: 36px;
+  left: 0px;
+  background-color: var(--gray);
+  color: var(--light-gray);
+  padding: 0px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+}
+
+.app .layout header .actions .action_user .logout:hover{
+  color: var(--red);
+  background: var(--black);
+  transform: translateY(-2px);
+  transition: .3s;
+}
+

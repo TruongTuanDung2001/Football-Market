@@ -1,3 +1,11 @@
+let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+if(!currentUser || currentUser.role !== 'admin'){
+    alert('Error login !!!');
+    // window.location.href = "/client/login.html";
+}else{
+    // alert('Login success !!!');
+}
 //
 const content = document.querySelector('#content');
 async function loadPage(page){
@@ -37,4 +45,10 @@ function setActive(item){
     item.classList.add("active");
 }
 
+// logout click
+const logoutAdmin = document.querySelector('.logout');
+logoutAdmin.addEventListener('click', function(){
+    localStorage.removeItem('currentUser');
+    window.location.href = '/client/login.html';
+});
 

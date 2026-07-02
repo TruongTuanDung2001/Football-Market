@@ -27,23 +27,19 @@ btnLogin.addEventListener('click', async function (e) {
     let check = apiUser.find(u => u.username === userName
         && u.password === password
     )
-    console.log(check);
 
     if (check) {
         if (check.role === 'admin') {
-            console.log('success');
+            localStorage.setItem('currentUser', JSON.stringify(check));
             window.location.href = "/client/dashboard/admin.html";
         } else if (check.role === 'user') {
+            localStorage.setItem('currentUser', JSON.stringify(check));
             window.location.href = "/client/index.html";
-
         }
     } else {
-        console.log('fails');git
+        console.log('fails');
     }
 
 });
 
-function loginAccount() {
-
-}
 
