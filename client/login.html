@@ -22,7 +22,6 @@
 
         <p>Buy & Sell Football Products</p>
       </div>
-
       <div class="right">
         <!-- LOGIN -->
         <form id="loginForm">
@@ -30,7 +29,15 @@
 
           <input type="text" placeholder="Username" class="inputAccountLogin" />
 
-          <input type="password" placeholder="Password" class="inputPasswordLogin" />
+          <div class="password-box">
+            <input
+              type="password"
+              placeholder="Password"
+              class="inputPasswordLogin"
+            />
+
+            <i class="fa-solid fa-eye toggle-password"></i>
+          </div>
 
           <button id="btn-login">Login</button>
 
@@ -70,6 +77,6 @@
     </div>
   </body>
   <!-- script -->
-   <script src="/client/js/pages/login.js"></script>
-   <script src="/client/js/api/api.js"></script>
+  <script src="/client/js/pages/login.js"></script>
+  <script src="/client/js/api/api.js"></script>
 </html>

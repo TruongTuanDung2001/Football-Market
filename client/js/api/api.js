@@ -5,7 +5,6 @@ async function getApi(name) {
         let response = await fetch(`http://localhost:3000/${name}`);
         if (response.ok) {
             let data = await response.json();
-            console.log(data);
             return data;
         }
     } catch (error) {
