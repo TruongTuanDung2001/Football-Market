@@ -1,15 +1,15 @@
- const login = document.getElementById("loginForm");
+const login = document.getElementById("loginForm");
 
-      const register = document.getElementById("registerForm");
+const register = document.getElementById("registerForm");
 
-      document.getElementById("showRegister").onclick = () => {
-        login.classList.add("hidden");
+document.getElementById("showRegister").onclick = () => {
+  login.classList.add("hidden");
 
-        register.classList.remove("hidden");
-      };
+  register.classList.remove("hidden");
+};
 
-      document.getElementById("showLogin").onclick = () => {
-        register.classList.add("hidden");
+document.getElementById("showLogin").onclick = () => {
+  register.classList.add("hidden");
 
-        login.classList.remove("hidden");
-      };
+  login.classList.remove("hidden");
+};
