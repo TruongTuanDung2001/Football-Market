@@ -35,6 +35,66 @@
       "createdAt": "2026-07-03T06:32:36.836Z",
       "updatedAt": "2026-07-03T06:32:36.836Z",
       "id": "iMSY_5oHEmo"
+    },
+    {
+      "name": "product 2",
+      "price": 20,
+      "sale": 0,
+      "quantity": 0,
+      "category": "Shirt",
+      "image": "/client/assets/images/product 2.jpg",
+      "description": "di giua thien ha anh van se buoc di de kiem emmmmm",
+      "createdAt": "2026-07-03T07:10:37.462Z",
+      "updatedAt": "2026-07-03T07:10:37.462Z",
+      "id": "BD3f8TwrWf0"
+    },
+    {
+      "name": "fsda",
+      "price": 12,
+      "sale": 123,
+      "quantity": 123,
+      "category": "Shoes",
+      "image": "/client/assets/images/product 2.jpg",
+      "description": "ádfaasdấdf",
+      "createdAt": "2026-07-03T07:15:55.521Z",
+      "updatedAt": "2026-07-03T07:15:55.521Z",
+      "id": "7XJe5NP79hE"
+    },
+    {
+      "name": "fsdfsd",
+      "price": 12,
+      "sale": 12,
+      "quantity": 12,
+      "category": "Jacket",
+      "image": "/client/assets/images/product hat 2.jpg",
+      "description": "123",
+      "createdAt": "2026-07-03T07:21:10.733Z",
+      "updatedAt": "2026-07-03T07:21:10.733Z",
+      "id": "wzY7NBOWpNg"
+    },
+    {
+      "name": "fsdfsd",
+      "price": 121212,
+      "sale": 1212,
+      "quantity": 1212,
+      "category": "Shoes",
+      "image": "/client/assets/images/product hat 1.jpg",
+      "description": "fasdfasdasdgasd",
+      "createdAt": "2026-07-03T07:21:30.688Z",
+      "updatedAt": "2026-07-03T07:21:30.688Z",
+      "id": "nryeSKFTpe8"
+    },
+    {
+      "name": "hfdg",
+      "price": 213,
+      "sale": 123,
+      "quantity": 123,
+      "category": "Shoes",
+      "image": "/client/assets/images/product hat 3.jpg",
+      "description": "dsfgdfsg",
+      "createdAt": "2026-07-03T07:39:17.075Z",
+      "updatedAt": "2026-07-03T07:39:17.075Z",
+      "id": "jddOJM2SoMY"
     }
   ],
   "users": [

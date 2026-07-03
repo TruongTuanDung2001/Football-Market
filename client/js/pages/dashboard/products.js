@@ -21,30 +21,46 @@ export function initProduct() {
 
 export function postProductApi() {
     const btnSubmit = document.querySelector('#btn-submit');
-
-    btnSubmit.addEventListener('click', async function (e) {
-        let productName = document.querySelector('#productName').value;
+    const productForm = document.querySelector('#productForm');
+    productForm.addEventListener('submit', async function (e) {
+        let productName = document.querySelector('#productName').value.trim();
         let category = document.querySelector('#category').value;
         let quantity = document.querySelector('#quantity').value;
         let price = document.querySelector('#price').value;
         let sale = document.querySelector('#sale').value;
         let image = document.querySelector('#image');
-        let description = document.querySelector('#description').value;
+        let description = document.querySelector('#description').value.trim();
 
         e.preventDefault();
 
+        console.log("Submit được chặn");
+        console.log("Submit được chặn");
+        console.log("Submit được chặn");
+        console.log("Submit được chặn");
+
 
         const file = image.files[0];
-        const imagePath = `/client/assets/images/${file.name}`;
-        console.log(productName, category, quantity, price, sale, image.value, file.name, description);
-        console.log(imagePath);//đường dẫn tệp file trong project để lấy file image
+        // Validate
+        if (
+            !productName ||
+            !category ||
+            !quantity ||
+            !price ||
+            !sale ||
+            !description
+            // || !file
+        ) {
+            alert("Vui lòng nhập đầy đủ thông tin sản phẩm!");
+            return;
+        }
         //kiểm tra chọn ảnh chưa
-
         if (!file) {
             alert("Vui lòng chọn ảnh!");
             return;
         }
+
         //Post api nè
+        const imagePath = `/client/assets/images/${file.name}`;//đường dẫn tệp file trong project để lấy file image
         const newProduct = {
             name: productName,
             price: Number(price),
@@ -86,4 +102,13 @@ const file = imageInput.files[0];
 const imagePath = `/client/assets/images/${file.name}`;
 
 console.log(imagePath);
+
+//reset from
+document.querySelector("#productForm").reset();
+
+//dong model
+document.querySelector("#addProductModal").classList.remove("show");
+
+//render lại
+renderProducts();
 */
