@@ -60,15 +60,16 @@
               <th>Name</th>
               <th>Category</th>
               <th>Price</th>
-              <th>Stock</th>
+              <th>Sale</th>
               <th>Status</th>
+              <th>Create at</th>
               <th>Action</th>
             </tr>
           </thead>
 
           <tbody id="product-list">
             <!--  -->
-            <tr>
+            <!-- <tr>
               <td>
                 <img class="product-image" src="" />
               </td>
@@ -84,7 +85,7 @@
               <td>
                 <span class="status in-stock"> In Stock </span>
               </td>
-
+              <td>03-07-2026</td>
               <td>
                 <div class="action">
                   <button class="view">
@@ -100,7 +101,7 @@
                   </button>
                 </div>
               </td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
@@ -140,5 +141,6 @@
       </div>
     </div>
   </body>
-  <script src="/client/js/pages/dashboard/products.js"></script>
+  <script type="module" src="/client/js/api/api.js"></script>
+  <script type="module" src="/client/js/pages/dashboard/products.js"></script>
 </html>

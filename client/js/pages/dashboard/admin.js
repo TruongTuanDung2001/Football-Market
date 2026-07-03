@@ -1,5 +1,5 @@
 //import
-import { initProduct } from './products.js';
+import { initProduct, showProduct } from './products.js';
 //
 
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -43,6 +43,7 @@ menuItems.forEach(item => {
             case "products":
                 setActive(item);
                 initProduct();
+                showProduct();
                 break;
 
             case "users":

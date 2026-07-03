@@ -1,3 +1,5 @@
+//import api.js
+import { getApi } from '../../api/api.js';
 //
 export function initProduct() {
     console.log("Product loaded");
@@ -17,7 +19,9 @@ export function initProduct() {
     });
 
     postProductApi();
+    
 }
+
 
 export function postProductApi() {
     const btnSubmit = document.querySelector('#btn-submit');
@@ -60,7 +64,7 @@ export function postProductApi() {
         }
 
         //Post api nè
-        const imagePath = `/client/assets/images/${file.name}`;//đường dẫn tệp file trong project để lấy file image
+        const imagePath = `/client/images/${file.name}`;//đường dẫn tệp file trong project để lấy file image
         const newProduct = {
             name: productName,
             price: Number(price),
@@ -95,6 +99,54 @@ export function postProductApi() {
     });
 }
 
+
+export async function showProduct() {
+    const dataProduct = await getApi('products');
+    const productList = document.querySelector('#product-list');
+    
+    console.log("dataproduct nè",dataProduct);
+    
+    // productList.innerHTML = '';
+    console.log(productList);
+    dataProduct.forEach(item => {
+        productList.innerHTML += `
+            <tr>
+              <td>
+                <img class="product-image" src="${item.image}" />
+              </td>
+
+              <td>${item.name}</td>
+
+              <td>${item.category}</td>
+
+              <td>${item.price}$</td>
+
+              <td>${item.sale}</td>
+
+              <td>
+                <span class="status in-stock"> In Stock </span>
+              </td>
+              <td>${item.createdAt}</td>
+              <td>
+                <div class="action">
+                  <button class="view">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+
+                  <button class="edit">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+
+                  <button class="delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+        `
+    });
+
+}
 //handle link image front-end
 /*
 const file = imageInput.files[0];
