@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Nike Mercurial Vapor XV TF",
       "price": 1200000,
       "sale": 15,
@@ -13,7 +13,7 @@
       "updatedAt": "2026-06-30T09:30:00"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Adidas Champions League Ball",
       "price": 850000,
       "sale": 0,
@@ -23,31 +23,41 @@
       "description": "Bóng thi đấu Adidas.",
       "createdAt": "2026-06-30T10:00:00",
       "updatedAt": "2026-06-30T10:00:00"
+    },
+    {
+      "name": "adidas",
+      "price": 99,
+      "sale": 10,
+      "quantity": 10,
+      "category": "Shoes",
+      "image": "/client/assets/images/product 2.jpg",
+      "description": "fsafads",
+      "createdAt": "2026-07-03T06:32:36.836Z",
+      "updatedAt": "2026-07-03T06:32:36.836Z",
+      "id": "iMSY_5oHEmo"
     }
   ],
-
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin01",
       "password": "123456",
       "role": "admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "admin02",
       "password": "123456",
       "role": "admin"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "admin03",
       "password": "123456",
       "role": "admin"
     },
-
     {
-      "id": 4,
+      "id": "4",
       "username": "dung",
       "password": "123456",
       "role": "user",
@@ -61,9 +71,8 @@
         }
       ]
     },
-
     {
-      "id": 5,
+      "id": "5",
       "username": "minh",
       "password": "123456",
       "role": "user",
@@ -72,5 +81,6 @@
       "phone": "0911111111",
       "cart": []
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
