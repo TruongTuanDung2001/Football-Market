@@ -104,6 +104,39 @@
           </tbody>
         </table>
       </div>
+
+      <!-- add product -->
+      <div class="modal" id="addProductModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Add Product</h2>
+            <span id="closeModal">&times;</span>
+          </div>
+
+          <form id="productForm">
+            <input type="text" placeholder="Product Name" id="productName" />
+
+            <select id="category">
+              <option>Shoes</option>
+              <option>Hat</option>
+              <option>Jacket</option>
+              <option>Glasses</option>
+              <option>Shirt</option>
+            </select>
+
+            <input type="number" min="0" placeholder="Price" id="price" />
+
+            <input type="number" min="0" placeholder="Sale" id="sale" />
+
+            <input type="file" placeholder="Image URL" id="image" />
+
+            <textarea placeholder="Description" id="description"></textarea>
+
+            <button type="submit">Add Product</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
+  <script src="/client/js/pages/dashboard/products.js"></script>
 </html>

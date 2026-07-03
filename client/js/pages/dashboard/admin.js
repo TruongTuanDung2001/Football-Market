@@ -1,44 +1,65 @@
+//import
+import { initProduct } from './products.js';
+//
+
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-if(!currentUser || currentUser.role !== 'admin'){
+if (!currentUser || currentUser.role !== 'admin') {
     alert('Error login !!!');
     // window.location.href = "/client/login.html";
-}else{
+} else {
     // alert('Login success !!!');
 }
 //
 const content = document.querySelector('#content');
-async function loadPage(page){
+async function loadPage(page) {
     const response = await fetch(`/client/dashboard/${page}.html`);
-    if(response.ok){
+    if (response.ok) {
         const html = await response.text();
         content.innerHTML = html;
-    }else{
+    } else {
         console.log('No data content');
     }
 };
 
 // local show dashboard page
-document.addEventListener('DOMContentLoaded', () => {
-    loadPage('dashboard');
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadPage('dashboard');
 });
 
 // menu sidebar
 const menuItems = document.querySelectorAll('.menu-item');
 menuItems.forEach(item => {
-    item.addEventListener('click', function(e){
-        if(item.dataset.page){
-            const page = item.dataset.page;
-            loadPage(page);
-            setActive(item);
-        }else{
+    item.addEventListener('click', async function (e) {
+        const page = item.dataset.page;
+        if (!page) { return; }
+        await loadPage(page);
+        setActive(item);
+        switch (page) {
+            case "dashboard":
+                setActive(item);
+                break;
 
+            case "products":
+                setActive(item);
+                initProduct();
+                break;
+
+            case "users":
+                setActive(item);
+                break;
+
+            case "posts":
+                setActive(item);
+                break;
+            default:
+                break;
         }
     });
 });
 
 // setActive sidebar menu item
-function setActive(item){
+function setActive(item) {
     menuItems.forEach(item => {
         item.classList.remove("active");
     });
@@ -47,7 +68,7 @@ function setActive(item){
 
 // logout click
 const logoutAdmin = document.querySelector('.logout');
-logoutAdmin.addEventListener('click', function(){
+logoutAdmin.addEventListener('click', function () {
     localStorage.removeItem('currentUser');
     window.location.href = '/client/login.html';
 });
