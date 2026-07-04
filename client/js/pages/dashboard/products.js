@@ -129,11 +129,11 @@ export async function showProduct() {
                     <i class="fa-solid fa-eye"></i>
                   </button>
 
-                  <button class="edit">
+                  <button class="edit" data-id="${item.id}">
                     <i class="fa-solid fa-pen"></i>
                   </button>
 
-                  <button class="delete">
+                  <button class="delete" data-id="${item.id}">
                     <i class="fa-solid fa-trash"></i>
                   </button>
                 </div>
@@ -150,13 +150,15 @@ export function editProductApi() {
 
 export function initProductEdit() {
     // Show/off modal edit product
-    let btnEdit = document.querySelector('.edit');
+    let btnEdit = document.querySelectorAll('.edit');
     let modelEdit = document.querySelector('#editProductModal');
     let closeModalEdit = document.querySelector('#closeEditModal');
 
     //
-    btnEdit.addEventListener('click', function (e) {
-        modelEdit.classList.add('show');
+    btnEdit.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            modelEdit.classList.add('show');
+        });
     });
 
     //
@@ -165,6 +167,29 @@ export function initProductEdit() {
     });
 }
 
+export async function getProductById(id){
+    try {
+        let response = await fetch(`http://localhost:3000/products/${id}`);
+
+        if(response.ok){
+            let data = await response.json();
+            console.log(data);
+        }
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
+export function showProductEditModal(){
+    let btnEdit = document.querySelectorAll('.edit');
+    btnEdit.forEach(btn => {
+        btn.addEventListener('click', async function(e){
+            let id = btn.dataset.id;
+            console.log(id);
+            await getProductById(id);
+        });
+    });
+}
 //handle link image front-end
 /*
 const file = imageInput.files[0];
