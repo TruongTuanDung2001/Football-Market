@@ -1,5 +1,5 @@
 //import
-import { initProduct, showProduct } from './products.js';
+import { initProductAdd, initProductEdit, showProduct, editProductApi } from './products.js';
 //
 
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -41,9 +41,11 @@ menuItems.forEach(item => {
                 break;
 
             case "products":
+                initProductAdd();
                 setActive(item);
-                initProduct();
-                showProduct();
+                await showProduct();
+                initProductEdit();
+                editProductApi();
                 break;
 
             case "users":
@@ -73,4 +75,3 @@ logoutAdmin.addEventListener('click', function () {
     localStorage.removeItem('currentUser');
     window.location.href = '/client/login.html';
 });
-

@@ -1,25 +1,28 @@
 //import api.js
 import { getApi } from '../../api/api.js';
 //
-export function initProduct() {
+export function initProductAdd() {
+    // Show/off modal post product
     console.log("Product loaded");
     const btnAdd = document.querySelector(".btn-add");
-    const modal = document.querySelector("#addProductModal");
-    const closeModal = document.querySelector("#closeModal");
+    const modalAdd = document.querySelector("#addProductModal");
+    const closeModalAdd = document.querySelector("#closeModal");
 
 
     btnAdd.addEventListener("click", () => {
-        modal.classList.add("show");
+        modalAdd.classList.add("show");
         console.log(btnAdd);
 
     });
 
-    closeModal.addEventListener("click", () => {
-        modal.classList.remove("show");
+    closeModalAdd.addEventListener("click", () => {
+        modalAdd.classList.remove("show");
     });
 
+
+
+    // Post api
     postProductApi();
-    
 }
 
 
@@ -36,13 +39,6 @@ export function postProductApi() {
         let description = document.querySelector('#description').value.trim();
 
         e.preventDefault();
-
-        console.log("Submit được chặn");
-        console.log("Submit được chặn");
-        console.log("Submit được chặn");
-        console.log("Submit được chặn");
-
-
         const file = image.files[0];
         // Validate
         if (
@@ -103,10 +99,10 @@ export function postProductApi() {
 export async function showProduct() {
     const dataProduct = await getApi('products');
     const productList = document.querySelector('#product-list');
-    
-    console.log("dataproduct nè",dataProduct);
-    
-    // productList.innerHTML = '';
+
+    console.log("dataproduct nè", dataProduct);
+
+    productList.innerHTML = '';
     console.log(productList);
     dataProduct.forEach(item => {
         productList.innerHTML += `
@@ -147,6 +143,28 @@ export async function showProduct() {
     });
 
 }
+
+export function editProductApi() {
+
+}
+
+export function initProductEdit() {
+    // Show/off modal edit product
+    let btnEdit = document.querySelector('.edit');
+    let modelEdit = document.querySelector('#editProductModal');
+    let closeModalEdit = document.querySelector('#closeEditModal');
+
+    //
+    btnEdit.addEventListener('click', function (e) {
+        modelEdit.classList.add('show');
+    });
+
+    //
+    closeModalEdit.addEventListener('click', () => {
+        modelEdit.classList.remove('show');
+    });
+}
+
 //handle link image front-end
 /*
 const file = imageInput.files[0];

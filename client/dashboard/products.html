@@ -139,6 +139,62 @@
           </form>
         </div>
       </div>
+
+      <!-- edit product -->
+      <!-- Edit Product -->
+      <div class="modal" id="editProductModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Edit Product</h2>
+            <span id="closeEditModal">&times;</span>
+          </div>
+
+          <form id="editProductForm">
+            <input type="hidden" id="editProductId" />
+
+            <input
+              type="text"
+              placeholder="Product Name"
+              id="editProductName"
+            />
+
+            <select id="editCategory">
+              <option>Shoes</option>
+              <option>Hat</option>
+              <option>Jacket</option>
+              <option>Glasses</option>
+              <option>Shirt</option>
+            </select>
+
+            <input
+              type="number"
+              min="0"
+              placeholder="Quantity"
+              id="editQuantity"
+            />
+
+            <input type="number" min="0" placeholder="Price" id="editPrice" />
+
+            <input type="number" min="0" placeholder="Sale" id="editSale" />
+
+            <div class="image-preview">
+              <p>Current Image</p>
+              <img
+                id="editPreviewImage"
+                src=""
+                alt="Preview"
+              />
+            </div>
+
+            <input type="file" id="editImage" />
+
+            <textarea placeholder="Description" id="editDescription"></textarea>
+
+            <button type="submit">Update Product</button>
+          </form>
+        </div>
+      </div>
+      <!--  -->
     </div>
   </body>
   <script type="module" src="/client/js/api/api.js"></script>
