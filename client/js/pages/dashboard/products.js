@@ -156,40 +156,92 @@ export function initProductEdit() {
 
     //
     btnEdit.forEach(btn => {
-        btn.addEventListener('click', function (e) {
+        btn.addEventListener('click', async function (e) {
             modelEdit.classList.add('show');
+            //
+            let id = btn.dataset.id;
+            let product = await getProductById(id);
+            modelEdit.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Edit Product</h2>
+                        <span id="closeEditModal">&times;</span>
+                    </div>
+
+                    <form id="editProductForm">
+                        <input type="hidden" id="editProductId" />
+
+                        <input
+                        type="text"
+                        placeholder="Product Name"
+                        id="editProductName" value="${product.name}"
+                        />
+
+                        <select id="editCategory">
+                            <option value="Shoes">Shoes</option>
+                            <option value="Hat">Hat</option>
+                            <option value="Jacket">Jacket</option>
+                            <option value="Glasses">Glasses</option>
+                            <option value="Shirt">Shirt</option>
+                        </select>
+
+                        <input
+                        type="number"
+                        min="0"
+                        placeholder="Quantity"
+                        id="editQuantity" value="${product.quantity}"
+                        />
+
+                        <input type="number" min="0" placeholder="Price" id="editPrice" value="${product.price}" />
+
+                        <input type="number" min="0" placeholder="Sale" id="editSale" value="${product.sale}" />
+
+                        <div class="image-preview">
+                        <p>Current Image</p>
+                        <img
+                            id="editPreviewImage"
+                            src="${product.image}"
+                            alt="Preview"
+                        />
+                        </div>
+
+                        <input type="file" id="editImage" />
+
+                        <textarea placeholder="Description" id="editDescription">${product.description}</textarea>
+
+                        <button type="submit">Update Product</button>
+                    </form>
+                </div>
+            `;
+            //gán category option
+            document.getElementById("editCategory").value = product.category;
+            //
+            closeModalEdit = document.querySelector('#closeEditModal');
+            //
+            closeModalEdit.addEventListener('click', () => {
+                modelEdit.classList.remove('show');
+            });
         });
     });
 
-    //
-    closeModalEdit.addEventListener('click', () => {
-        modelEdit.classList.remove('show');
-    });
+
 }
 
-export async function getProductById(id){
+export async function getProductById(id) {
     try {
         let response = await fetch(`http://localhost:3000/products/${id}`);
 
-        if(response.ok){
+        if (response.ok) {
             let data = await response.json();
             console.log(data);
+            return data;
         }
     } catch (error) {
         throw new Error(error);
     }
 }
 
-export function showProductEditModal(){
-    let btnEdit = document.querySelectorAll('.edit');
-    btnEdit.forEach(btn => {
-        btn.addEventListener('click', async function(e){
-            let id = btn.dataset.id;
-            console.log(id);
-            await getProductById(id);
-        });
-    });
-}
+
 //handle link image front-end
 /*
 const file = imageInput.files[0];

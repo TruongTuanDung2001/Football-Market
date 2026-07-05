@@ -1,5 +1,5 @@
 //import
-import { initProductAdd, initProductEdit, showProduct, showProductEditModal, editProductApi } from './products.js';
+import { initProductAdd, initProductEdit, showProduct, editProductApi } from './products.js';
 //
 
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -46,7 +46,6 @@ menuItems.forEach(item => {
                 await showProduct();
                 initProductEdit();
                 editProductApi();
-                showProductEditModal();
                 break;
 
             case "users":
