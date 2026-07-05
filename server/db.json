@@ -49,30 +49,6 @@
       "id": "BD3f8TwrWf0"
     },
     {
-      "name": "fsda",
-      "price": 12,
-      "sale": 123,
-      "quantity": 123,
-      "category": "Shoes",
-      "image": "/client/image/product 2.jpg",
-      "description": "ádfaasdấdf",
-      "createdAt": "2026-07-03T07:15:55.521Z",
-      "updatedAt": "2026-07-03T07:15:55.521Z",
-      "id": "7XJe5NP79hE"
-    },
-    {
-      "name": "fsdfsd",
-      "price": 12,
-      "sale": 12,
-      "quantity": 12,
-      "category": "Jacket",
-      "image": "/client/image/product hat 2.jpg",
-      "description": "123",
-      "createdAt": "2026-07-03T07:21:10.733Z",
-      "updatedAt": "2026-07-03T07:21:10.733Z",
-      "id": "wzY7NBOWpNg"
-    },
-    {
       "name": "fsdfsd",
       "price": 121212,
       "sale": 1212,
@@ -85,18 +61,6 @@
       "id": "nryeSKFTpe8"
     },
     {
-      "name": "hfdg",
-      "price": 213,
-      "sale": 123,
-      "quantity": 123,
-      "category": "Shoes",
-      "image": "/client/image/product hat 3.jpg",
-      "description": "dsfgdfsg",
-      "createdAt": "2026-07-03T07:39:17.075Z",
-      "updatedAt": "2026-07-03T07:39:17.075Z",
-      "id": "jddOJM2SoMY"
-    },
-    {
       "name": "glasses",
       "price": 3123121,
       "sale": 11,
@@ -107,6 +71,18 @@
       "createdAt": "2026-07-05T07:45:37.438Z",
       "updatedAt": "2026-07-05T07:45:37.442Z",
       "id": "aj5h_A4z33M"
+    },
+    {
+      "name": "trương tuấn dũng đẹp troai",
+      "price": 123,
+      "sale": 321,
+      "quantity": 321,
+      "category": "Shirt",
+      "image": "/client/image/categories hat.jpg",
+      "description": "good",
+      "createdAt": "2026-07-05T09:19:47.509Z",
+      "updatedAt": "2026-07-05T09:19:58.413Z",
+      "id": "GOey5EZvBG0"
     }
   ],
   "users": [

@@ -1,9 +1,7 @@
 // Get api
 // user
 export async function getApi(name) {
-    try {
-        console.log("name: ", name);
-        
+    try {     
         let response = await fetch(`http://localhost:3000/${name}`);
         if (response.ok) {
             let data = await response.json();

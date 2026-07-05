@@ -1,6 +1,7 @@
 //import api.js
 import { getApi } from '../../api/api.js';
-//
+
+// Show modal add product in window
 export function initProductAdd() {
     // Show/off modal post product
     console.log("Product loaded");
@@ -25,7 +26,7 @@ export function initProductAdd() {
     postProductApi();
 }
 
-
+// Post new product
 export function postProductApi() {
     const btnSubmit = document.querySelector('#btn-submit');
     const productForm = document.querySelector('#productForm');
@@ -95,15 +96,12 @@ export function postProductApi() {
     });
 }
 
-
+// Render all product in product dashboard page
 export async function showProduct() {
     const dataProduct = await getApi('products');
     const productList = document.querySelector('#product-list');
 
-    console.log("dataproduct nè", dataProduct);
-
     productList.innerHTML = '';
-    console.log(productList);
     dataProduct.forEach(item => {
         productList.innerHTML += `
             <tr>
@@ -141,10 +139,10 @@ export async function showProduct() {
             </tr>
         `
     });
-
 }
 
-export async function editProductApi(id) {
+// Edit product by id product
+export function editProductApi(id) {
     let btnEdit = document.getElementById('btn-edit');
     btnEdit.addEventListener('click', async function (e) {
         e.preventDefault();
@@ -185,6 +183,7 @@ export async function editProductApi(id) {
     });
 }
 
+// Show modal edit in window, get infor data product by id in modal
 export function initProductEdit() {
     // Show/off modal edit product
     let btnEdit = document.querySelectorAll('.edit');
@@ -283,6 +282,7 @@ export function initProductEdit() {
 
 }
 
+// Get product by id
 export async function getProductById(id) {
     try {
         let response = await fetch(`http://localhost:3000/products/${id}`);
@@ -297,7 +297,33 @@ export async function getProductById(id) {
     }
 }
 
+// Remove product by id
+export function removeProductById() {
+    const btnDelete = document.querySelectorAll('.delete');
+    btnDelete.forEach(btn => {
+        btn.addEventListener('click', async function (e) {
+            const id = btn.dataset.id;
+            const result = confirm("Do you want to delete your product");
+            if (id) {
+                if (result) {
+                    try {
+                        let response = await fetch(`http://localhost:3000/products/${id}`, {
+                            method: 'DELETE'
+                        });
 
+                        if (response.ok) {
+                            let data = await response.json();
+                            console.log('Delete success');
+                            console.log(data);
+                        }
+                    } catch (error) {
+                        throw new Error(error);
+                    }
+                }
+            }
+        });
+    })
+}
 
 //handle link image front-end
 /*
