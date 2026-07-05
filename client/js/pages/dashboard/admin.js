@@ -45,7 +45,6 @@ menuItems.forEach(item => {
                 setActive(item);
                 await showProduct();
                 initProductEdit();
-                editProductApi();
                 break;
 
             case "users":

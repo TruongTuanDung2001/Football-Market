@@ -25,16 +25,16 @@
       "updatedAt": "2026-06-30T10:00:00"
     },
     {
-      "name": "adidas",
-      "price": 99,
-      "sale": 10,
-      "quantity": 10,
+      "id": "iMSY_5oHEmo",
+      "name": "toidodaden",
+      "price": 999,
+      "sale": 999,
+      "quantity": 999,
       "category": "Shoes",
-      "image": "/client/image/product 2.jpg",
-      "description": "fsafads",
-      "createdAt": "2026-07-03T06:32:36.836Z",
-      "updatedAt": "2026-07-03T06:32:36.836Z",
-      "id": "iMSY_5oHEmo"
+      "image": "/client/image/logo.png",
+      "description": "he is goat",
+      "createdAt": "2026-07-03T07:10:37.462Z",
+      "updatedAt": "2026-07-05T08:50:55.760Z"
     },
     {
       "name": "product 2",
@@ -107,18 +107,6 @@
       "createdAt": "2026-07-05T07:45:37.438Z",
       "updatedAt": "2026-07-05T07:45:37.442Z",
       "id": "aj5h_A4z33M"
-    },
-    {
-      "name": "mesi",
-      "price": 123,
-      "sale": 12,
-      "quantity": 12,
-      "category": "Shoes",
-      "image": "/client/images/categories shoes.jpg",
-      "description": "dssdafsdsfdgdfsgsd",
-      "createdAt": "2026-07-05T07:47:13.787Z",
-      "updatedAt": "2026-07-05T07:47:13.787Z",
-      "id": "Un4lo8sLkgs"
     }
   ],
   "users": [

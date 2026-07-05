@@ -144,8 +144,45 @@ export async function showProduct() {
 
 }
 
-export function editProductApi() {
-
+export async function editProductApi(id) {
+    let btnEdit = document.getElementById('btn-edit');
+    btnEdit.addEventListener('click', async function (e) {
+        e.preventDefault();
+        //
+        let editName = document.getElementById('editProductName').value;
+        let editCategory = document.getElementById('editCategory').value;
+        let editQuantity = document.getElementById('editQuantity').value;
+        let editPrice = document.getElementById('editPrice').value;
+        let editSale = document.getElementById('editSale').value;
+        let editPreviewImage = document.getElementById('editPreviewImage').getAttribute('src');
+        let editDescription = document.getElementById('editDescription').value;
+        try {
+            const newProduct = {
+                id: id,
+                name: editName,
+                price: Number(editPrice),
+                sale: Number(editSale),
+                quantity: Number(editQuantity),
+                category: editCategory,
+                image: editPreviewImage,
+                description: editDescription,
+                updatedAt: new Date().toISOString()
+            }
+            let response = await fetch(`http://localhost:3000/products/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newProduct),
+            })
+            if (response.ok) {
+                let data = await response.json();
+                console.log(data);
+            }
+        } catch (error) {
+            throw new Error(error);
+        }
+    });
 }
 
 export function initProductEdit() {
@@ -161,6 +198,8 @@ export function initProductEdit() {
             //
             let id = btn.dataset.id;
             let product = await getProductById(id);
+            let createAt = product.createdAt;
+            //
             modelEdit.innerHTML = `
                 <div class="modal-content">
                     <div class="modal-header">
@@ -209,7 +248,7 @@ export function initProductEdit() {
 
                         <textarea placeholder="Description" id="editDescription">${product.description}</textarea>
 
-                        <button type="submit">Update Product</button>
+                        <button type="submit" id="btn-edit">Update Product</button>
                     </form>
                 </div>
             `;
@@ -227,10 +266,11 @@ export function initProductEdit() {
                 if (file) {
                     // imagePreview.src = URL.createObjectURL(file);
                     imagePreview.src = imagePath;
-                    console.log(imagePreview.src);
                 }
             });
 
+            //edit nè
+            editProductApi(id);
 
             //đóng modal
             closeModalEdit = document.querySelector('#closeEditModal');
@@ -256,6 +296,7 @@ export async function getProductById(id) {
         throw new Error(error);
     }
 }
+
 
 
 //handle link image front-end
