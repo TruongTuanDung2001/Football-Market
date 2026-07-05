@@ -60,7 +60,7 @@ export function postProductApi() {
         }
 
         //Post api nè
-        const imagePath = `/client/images/${file.name}`;//đường dẫn tệp file trong project để lấy file image
+        const imagePath = `/client/image/${file.name}`;//đường dẫn tệp file trong project để lấy file image
         const newProduct = {
             name: productName,
             price: Number(price),
@@ -213,11 +213,27 @@ export function initProductEdit() {
                     </form>
                 </div>
             `;
+
             //gán category option
-            document.getElementById("editCategory").value = product.category;
-            //
+            let productCategory = document.getElementById("editCategory").value = product.category;
+
+            //gán edit image
+            let editImage = document.getElementById('editImage'); //input nhập url ảnh mới
+            let imagePreview = document.getElementById('editPreviewImage'); // ảnh hiển thị của product
+            editImage.addEventListener('change', function () {
+                const file = editImage.files[0];
+                //đường dẫn image
+                const imagePath = `/client/image/${file.name}`;//đường dẫn tệp file trong project để lấy file image
+                if (file) {
+                    // imagePreview.src = URL.createObjectURL(file);
+                    imagePreview.src = imagePath;
+                    console.log(imagePreview.src);
+                }
+            });
+
+
+            //đóng modal
             closeModalEdit = document.querySelector('#closeEditModal');
-            //
             closeModalEdit.addEventListener('click', () => {
                 modelEdit.classList.remove('show');
             });

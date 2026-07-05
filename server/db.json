@@ -95,6 +95,30 @@
       "createdAt": "2026-07-03T07:39:17.075Z",
       "updatedAt": "2026-07-03T07:39:17.075Z",
       "id": "jddOJM2SoMY"
+    },
+    {
+      "name": "glasses",
+      "price": 3123121,
+      "sale": 11,
+      "quantity": 11,
+      "category": "Glasses",
+      "image": "/client/image/product glasses 3.jpg",
+      "description": "ádgdfsgdsfgsdfgsdf",
+      "createdAt": "2026-07-05T07:45:37.438Z",
+      "updatedAt": "2026-07-05T07:45:37.442Z",
+      "id": "aj5h_A4z33M"
+    },
+    {
+      "name": "mesi",
+      "price": 123,
+      "sale": 12,
+      "quantity": 12,
+      "category": "Shoes",
+      "image": "/client/images/categories shoes.jpg",
+      "description": "dssdafsdsfdgdfsgsd",
+      "createdAt": "2026-07-05T07:47:13.787Z",
+      "updatedAt": "2026-07-05T07:47:13.787Z",
+      "id": "Un4lo8sLkgs"
     }
   ],
   "users": [
