@@ -119,8 +119,10 @@ export function showProduct() {
 
               <td>${item.sale}</td>
 
+              <td>${item.quantity}</td>
+
               <td>
-                <span class="status in-stock"> In Stock </span>
+                <span class="status in-stock">${item.quantity === 0 ? 'Sold Out': item.quantity < 20 ? 'Low Stock' : 'In Stock'}</span>
               </td>
               <td>${item.createdAt}</td>
               <td>
@@ -356,6 +358,8 @@ function renderProduct(allProduct) {
 
               <td>${item.sale}</td>
 
+              <td>${item.quantity}</td>
+
               <td>
                 <span class="status in-stock"> In Stock </span>
               </td>
@@ -382,7 +386,6 @@ export function filterCategory() {
     const filterCategory = document.getElementById('filterCategory');
     filterCategory.addEventListener('change', function (e) {
         let keyword = filterCategory.value.toLowerCase();
-        console.log(keyword);
         
         let filterProduct = allProducts.filter(product =>{
             return product.category.toLowerCase().includes(keyword);
