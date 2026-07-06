@@ -1,5 +1,5 @@
 //import
-import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory, filterStatus} from './products.js';
+import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory, filterStatus, filterAll} from './products.js';
 //
 
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -47,8 +47,9 @@ menuItems.forEach(item => {
                 initProductEdit(); //kh cần await
                 removeProductById(); //kh kh cần await
                 searchProduct();
-                filterCategory();
-                filterStatus();
+                filterCategory(); // change value trong select là nó chạy 
+                filterStatus(); //change value trong select là nó chạy
+                filterAll(); // filter product all category / status khi bấm nút lọc
                 break;
 
             case "users":

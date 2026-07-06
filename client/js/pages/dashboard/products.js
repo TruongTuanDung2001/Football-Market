@@ -122,7 +122,7 @@ export function showProduct() {
               <td>${item.quantity}</td>
 
               <td>
-                <span class="status in-stock">${item.quantity === 0 ? 'Sold Out': item.quantity < 20 ? 'Low Stock' : 'In Stock'}</span>
+                <span class="status in-stock">${item.quantity === 0 ? 'Sold Out' : item.quantity < 20 ? 'Low Stock' : 'In Stock'}</span>
               </td>
               <td>${item.createdAt}</td>
               <td>
@@ -361,7 +361,7 @@ function renderProduct(allProduct) {
               <td>${item.quantity}</td>
 
               <td>
-                <span class="status in-stock">${item.quantity === 0 ? 'Sold Out': item.quantity < 20 ? 'Low Stock' : 'In Stock'}</span>
+                <span class="status in-stock">${item.quantity === 0 ? 'Sold Out' : item.quantity < 20 ? 'Low Stock' : 'In Stock'}</span>
               </td>
               <td>${item.createdAt}</td>
               <td>
@@ -384,49 +384,106 @@ function renderProduct(allProduct) {
 // Filter product by category product
 export function filterCategory() {
     const filterCategory = document.getElementById('filterCategory');
+
     filterCategory.addEventListener('change', function (e) {
         let keyword = filterCategory.value.toLowerCase();
-        
-        let filterProduct = allProducts.filter(product =>{
+
+        let filterProduct = allProducts.filter(product => {
             return product.category.toLowerCase().includes(keyword);
         })
-        if(keyword === 'all categories'){
+        if (keyword === 'all categories') {
             renderProduct(allProducts);
             return;
         }
         renderProduct(filterProduct);
     });
+
 }
 
 // Filter product by quantity product
-export function filterStatus(){
+export function filterStatus() {
     //quantity === 0: sold out => < 20: low stock => > 20: in stock
     const filterStatus = document.getElementById('filterStatus');
     let resultFilter;
-    filterStatus.addEventListener('change', function(e){
+    filterStatus.addEventListener('change', function (e) {
         let keyword = filterStatus.value.toLowerCase();
         console.log(keyword);
-        
-        if(keyword === 'sold out'){
+
+        if (keyword === 'sold out') {
             resultFilter = allProducts.filter(product => {
                 return product.quantity === 0;
             })
             renderProduct(resultFilter);
         }
-        else if(keyword === 'low stock'){
+        else if (keyword === 'low stock') {
             resultFilter = allProducts.filter(product => {
                 return product.quantity < 20 && product.quantity > 0;
             });
             renderProduct(resultFilter);
         }
-        else if(keyword === 'in stock'){
+        else if (keyword === 'in stock') {
             resultFilter = allProducts.filter(product => {
                 return product.quantity > 20;
             })
             renderProduct(resultFilter);
         }
-        else{
+        else {
             renderProduct(allProducts);
+        }
+    });
+}
+
+// Filter product form category / status by button filterAll
+export function filterAll() {
+    const filterCategory = document.getElementById('filterCategory');
+    const filterStatus = document.getElementById('filterStatus');
+    const btnFilterAll = document.getElementById('filterAll');
+    //
+    btnFilterAll.addEventListener('click', function (e) {
+        let keyCategory = filterCategory.value.toLowerCase();
+        let keyStatus = filterStatus.value.toLowerCase();
+
+        //
+        if (keyCategory === 'all categories' && keyStatus === 'all status') {
+            renderProduct(allProducts);
+        }
+        else if (keyCategory === 'all categories' && keyStatus !== 'all status') {
+            let resultFilter = allProducts.filter(product => {
+                if (keyStatus === 'sold out') {
+                    return product.quantity === 0;
+                }
+                else if (keyStatus === 'low stock') {
+                    return product.quantity < 20 && product.quantity > 0;
+                }
+                else if (keyStatus === 'in stock') {
+                    return product.quantity > 20;
+                }
+            })
+            renderProduct(resultFilter);
+        }
+        else if (keyCategory !== 'all categories' && keyStatus === 'all status') {
+            let resultFilter = allProducts.filter(product => {
+                return product.category.toLowerCase().includes(keyCategory);
+            })
+            renderProduct(resultFilter);
+        }
+        else if (keyCategory !== 'all categories' && keyStatus !== 'all status') {
+            let resultFilter = allProducts.filter(product => {
+                return product.category.toLowerCase().includes(keyCategory);
+            });
+
+            resultFilter = resultFilter.filter(product => {
+                if (keyStatus === 'sold out') {
+                    return product.quantity === 0;
+                }
+                else if (keyStatus === 'low stock') {
+                    return product.quantity < 20 && product.quantity > 0;
+                }
+                else if (keyStatus === 'in stock') {
+                    return product.quantity > 20;
+                }
+            })
+            renderProduct(resultFilter);
         }
     });
 }

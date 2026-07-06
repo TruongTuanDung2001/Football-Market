@@ -466,3 +466,17 @@ tbody tr:hover{
 #editProductForm button:hover {
     background: #2980b9;
 }
+
+#filterAll{
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 0px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .1s;
+}
+#filterAll:hover{
+    transform: translateY(-2px);
+    transition: .1s;
+}
