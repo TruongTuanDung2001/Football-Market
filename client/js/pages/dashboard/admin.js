@@ -1,5 +1,5 @@
 //import
-import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory} from './products.js';
+import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory, filterStatus} from './products.js';
 //
 
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -48,6 +48,7 @@ menuItems.forEach(item => {
                 removeProductById(); //kh kh cần await
                 searchProduct();
                 filterCategory();
+                filterStatus();
                 break;
 
             case "users":

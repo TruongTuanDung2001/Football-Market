@@ -361,7 +361,7 @@ function renderProduct(allProduct) {
               <td>${item.quantity}</td>
 
               <td>
-                <span class="status in-stock"> In Stock </span>
+                <span class="status in-stock">${item.quantity === 0 ? 'Sold Out': item.quantity < 20 ? 'Low Stock' : 'In Stock'}</span>
               </td>
               <td>${item.createdAt}</td>
               <td>
@@ -398,6 +398,38 @@ export function filterCategory() {
     });
 }
 
+// Filter product by quantity product
+export function filterStatus(){
+    //quantity === 0: sold out => < 20: low stock => > 20: in stock
+    const filterStatus = document.getElementById('filterStatus');
+    let resultFilter;
+    filterStatus.addEventListener('change', function(e){
+        let keyword = filterStatus.value.toLowerCase();
+        console.log(keyword);
+        
+        if(keyword === 'sold out'){
+            resultFilter = allProducts.filter(product => {
+                return product.quantity === 0;
+            })
+            renderProduct(resultFilter);
+        }
+        else if(keyword === 'low stock'){
+            resultFilter = allProducts.filter(product => {
+                return product.quantity < 20 && product.quantity > 0;
+            });
+            renderProduct(resultFilter);
+        }
+        else if(keyword === 'in stock'){
+            resultFilter = allProducts.filter(product => {
+                return product.quantity > 20;
+            })
+            renderProduct(resultFilter);
+        }
+        else{
+            renderProduct(allProducts);
+        }
+    });
+}
 //handle link image front-end
 /*
 const file = imageInput.files[0];
