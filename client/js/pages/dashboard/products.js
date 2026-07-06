@@ -382,9 +382,15 @@ export function filterCategory() {
     const filterCategory = document.getElementById('filterCategory');
     filterCategory.addEventListener('change', function (e) {
         let keyword = filterCategory.value.toLowerCase();
+        console.log(keyword);
+        
         let filterProduct = allProducts.filter(product =>{
             return product.category.toLowerCase().includes(keyword);
         })
+        if(keyword === 'all categories'){
+            renderProduct(allProducts);
+            return;
+        }
         renderProduct(filterProduct);
     });
 }
