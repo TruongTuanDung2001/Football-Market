@@ -123,9 +123,6 @@ export async function showProduct() {
               <td>${item.createdAt}</td>
               <td>
                 <div class="action">
-                  <button class="view">
-                    <i class="fa-solid fa-eye"></i>
-                  </button>
 
                   <button class="edit" data-id="${item.id}">
                     <i class="fa-solid fa-pen"></i>
@@ -325,6 +322,58 @@ export function removeProductById() {
     })
 }
 
+export async function searchProduct() {
+    let allProducts = await getApi('products');
+    let inputSearch = document.getElementById('searchProducts');
+    inputSearch.addEventListener('input', async function (e) {
+        let keyword = this.value.toLowerCase();
+        let resultSearch = allProducts.filter(product => {
+            return product.name.toLowerCase().includes(keyword);
+        });
+        renderProduct(resultSearch);
+    });
+}
+
+function renderProduct(allProduct) {
+    const productList = document.querySelector('#product-list');
+
+    productList.innerHTML = '';
+    allProduct.forEach(item => {
+        productList.innerHTML += `
+            <tr>
+              <td>
+                <img class="product-image" src="${item.image}" />
+              </td>
+
+              <td>${item.name}</td>
+
+              <td>${item.category}</td>
+
+              <td>${item.price}$</td>
+
+              <td>${item.sale}</td>
+
+              <td>
+                <span class="status in-stock"> In Stock </span>
+              </td>
+              <td>${item.createdAt}</td>
+              <td>
+                <div class="action">
+
+                  <button class="edit" data-id="${item.id}">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+
+                  <button class="delete" data-id="${item.id}">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+        `
+    });
+}
+
 //handle link image front-end
 /*
 const file = imageInput.files[0];
@@ -341,4 +390,9 @@ document.querySelector("#addProductModal").classList.remove("show");
 
 //render lại
 renderProducts();
+
+icon eye
+                  <button class="view">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
 */
