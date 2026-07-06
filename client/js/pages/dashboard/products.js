@@ -1,6 +1,10 @@
 //import api.js
 import { getApi } from '../../api/api.js';
 
+//
+let allProducts = await getApi('products');
+
+
 // Show modal add product in window
 export function initProductAdd() {
     // Show/off modal post product
@@ -97,12 +101,10 @@ export function postProductApi() {
 }
 
 // Render all product in product dashboard page
-export async function showProduct() {
-    const dataProduct = await getApi('products');
+export function showProduct() {
     const productList = document.querySelector('#product-list');
-
     productList.innerHTML = '';
-    dataProduct.forEach(item => {
+    allProducts.forEach(item => {
         productList.innerHTML += `
             <tr>
               <td>
@@ -322,8 +324,8 @@ export function removeProductById() {
     })
 }
 
+// Search product
 export async function searchProduct() {
-    let allProducts = await getApi('products');
     let inputSearch = document.getElementById('searchProducts');
     inputSearch.addEventListener('input', async function (e) {
         let keyword = this.value.toLowerCase();
@@ -334,6 +336,7 @@ export async function searchProduct() {
     });
 }
 
+// Render product after search and filter product
 function renderProduct(allProduct) {
     const productList = document.querySelector('#product-list');
 
@@ -371,6 +374,18 @@ function renderProduct(allProduct) {
               </td>
             </tr>
         `
+    });
+}
+
+// Filter product by category product
+export function filterCategory() {
+    const filterCategory = document.getElementById('filterCategory');
+    filterCategory.addEventListener('change', function (e) {
+        let keyword = filterCategory.value.toLowerCase();
+        let filterProduct = allProducts.filter(product =>{
+            return product.category.toLowerCase().includes(keyword);
+        })
+        renderProduct(filterProduct);
     });
 }
 

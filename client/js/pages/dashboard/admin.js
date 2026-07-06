@@ -1,5 +1,5 @@
 //import
-import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct} from './products.js';
+import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory} from './products.js';
 //
 
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -43,10 +43,11 @@ menuItems.forEach(item => {
             case "products":
                 initProductAdd();
                 setActive(item);
-                await showProduct(); // phải dùng await vì bên kia nó phải fetch dữ liệu api xong render ra
+                showProduct(); // phải dùng await vì bên kia nó phải fetch dữ liệu api xong render ra
                 initProductEdit(); //kh cần await
                 removeProductById(); //kh kh cần await
-                await searchProduct();
+                searchProduct();
+                filterCategory();
                 break;
 
             case "users":
