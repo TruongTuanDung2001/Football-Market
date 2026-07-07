@@ -44,8 +44,6 @@ menuItems.forEach(item => {
                 initProductAdd();
                 setActive(item);
                 showProduct(); // phải dùng await vì bên kia nó phải fetch dữ liệu api xong render ra
-                initProductEdit(); //kh cần await
-                removeProductById(); //kh kh cần await
                 searchProduct();
                 filterCategory(); // change value trong select là nó chạy 
                 filterStatus(); //change value trong select là nó chạy

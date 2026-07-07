@@ -83,6 +83,30 @@
       "createdAt": "2026-07-05T09:19:47.509Z",
       "updatedAt": "2026-07-05T09:19:58.413Z",
       "id": "GOey5EZvBG0"
+    },
+    {
+      "name": "test in stock",
+      "price": 123231,
+      "sale": 11,
+      "quantity": 41142,
+      "category": "Shoes",
+      "image": "/client/image/categories shirt.jpg",
+      "description": "ronaldol",
+      "createdAt": "2026-07-07T10:22:38.233Z",
+      "updatedAt": "2026-07-07T10:30:34.009Z",
+      "id": "GTKAKtX0NLY"
+    },
+    {
+      "name": "test in stock",
+      "price": 23412,
+      "sale": 12,
+      "quantity": 412412,
+      "category": "Shoes",
+      "image": "/client/image/categories shirt.jpg",
+      "description": "aaaa",
+      "createdAt": "2026-07-07T10:23:52.344Z",
+      "updatedAt": "2026-07-07T10:30:40.954Z",
+      "id": "xu_dvmsjF-U"
     }
   ],
   "users": [

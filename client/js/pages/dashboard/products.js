@@ -465,7 +465,10 @@ export function filterAll() {
 
         //
         if (keyCategory === 'all categories' && keyStatus === 'all status') {
-            renderProduct(allProducts);
+            currentPage = 1;
+            resultFilterProducts = allProducts;
+            paginationProduct();
+            // renderProduct(allProducts);
         }
         else if (keyCategory === 'all categories' && keyStatus !== 'all status') {
             let resultFilter = allProducts.filter(product => {
@@ -479,13 +482,19 @@ export function filterAll() {
                     return product.quantity > 20;
                 }
             })
-            renderProduct(resultFilter);
+            currentPage = 1;
+            resultFilterProducts = resultFilter;
+            paginationProduct();
+            // renderProduct(resultFilter);
         }
         else if (keyCategory !== 'all categories' && keyStatus === 'all status') {
             let resultFilter = allProducts.filter(product => {
                 return product.category.toLowerCase().includes(keyCategory);
             })
-            renderProduct(resultFilter);
+            currentPage = 1;
+            resultFilterProducts = resultFilter;
+            paginationProduct();
+            // renderProduct(resultFilter);
         }
         else if (keyCategory !== 'all categories' && keyStatus !== 'all status') {
             let resultFilter = allProducts.filter(product => {
@@ -503,7 +512,10 @@ export function filterAll() {
                     return product.quantity > 20;
                 }
             })
-            renderProduct(resultFilter);
+            currentPage = 1;
+            resultFilterProducts = resultFilter;
+            paginationProduct();
+            // renderProduct(resultFilter);
         }
     });
 }
@@ -522,6 +534,10 @@ export function paginationProduct() {
     //
     renderProduct(productPerpage);
     renderButtonPagination();
+
+    //
+    initProductEdit(); //kh cần await
+    removeProductById(); //kh kh cần await
 }
 
 function renderButtonPagination() {
