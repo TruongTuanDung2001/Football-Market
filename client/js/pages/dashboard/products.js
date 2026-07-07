@@ -3,7 +3,7 @@ import { getApi } from '../../api/api.js';
 
 //
 let allProducts = await getApi('products');
-let filterProducts = [...allProducts];
+let resultFilterProducts = [...allProducts];
 
 // Show modal add product in window
 export function initProductAdd() {
@@ -335,8 +335,8 @@ export async function searchProduct() {
             return product.name.toLowerCase().includes(keyword);
         });
 
-        filterProducts = resultSearch;
-
+        resultFilterProducts = resultSearch;
+        currentPage = 1; //quay về trang 1
         paginationProduct();
         // renderProduct(resultSearch);
     });
@@ -399,7 +399,10 @@ export function filterCategory() {
             renderProduct(allProducts);
             return;
         }
-        renderProduct(filterProduct);
+        resultFilterProducts = filterProduct;
+        currentPage = 1;
+        paginationProduct();
+        // renderProduct(filterProduct);
     });
 
 }
@@ -501,9 +504,7 @@ export function paginationProduct() {
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
 
-    const productPerpage = filterProducts.slice(start, end);
-    console.log(filterProducts);
-    
+    const productPerpage = resultFilterProducts.slice(start, end);
     console.log(productPerpage);
     //
     renderProduct(productPerpage);
@@ -511,7 +512,7 @@ export function paginationProduct() {
 }
 
 function renderButtonPagination() {
-    const totalPages = Math.ceil(filterProducts.length / itemsPerPage);
+    const totalPages = Math.ceil(resultFilterProducts.length / itemsPerPage);
     /**
     Math.ceil() → làm tròn lên (dùng để tính số trang) 1.2 thành 2
     Math.floor() → làm tròn xuống 1.9 thành 1
