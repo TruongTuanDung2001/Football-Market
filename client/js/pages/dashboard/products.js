@@ -396,7 +396,9 @@ export function filterCategory() {
             return product.category.toLowerCase().includes(keyword);
         })
         if (keyword === 'all categories') {
-            renderProduct(allProducts);
+            resultFilterProducts = allProducts;
+            paginationProduct();
+            // renderProduct(allProducts);
             return;
         }
         resultFilterProducts = filterProduct;
@@ -414,28 +416,39 @@ export function filterStatus() {
     let resultFilter;
     filterStatus.addEventListener('change', function (e) {
         let keyword = filterStatus.value.toLowerCase();
-        console.log(keyword);
-
+        //
+        currentPage = 1;
         if (keyword === 'sold out') {
             resultFilter = allProducts.filter(product => {
                 return product.quantity === 0;
             })
-            renderProduct(resultFilter);
+
+            resultFilterProducts = resultFilter;
+            paginationProduct();
+            // renderProduct(resultFilter);
         }
         else if (keyword === 'low stock') {
             resultFilter = allProducts.filter(product => {
                 return product.quantity < 20 && product.quantity > 0;
             });
-            renderProduct(resultFilter);
+
+            resultFilterProducts = resultFilter;
+            paginationProduct();
+            // renderProduct(resultFilter);
         }
         else if (keyword === 'in stock') {
             resultFilter = allProducts.filter(product => {
                 return product.quantity > 20;
             })
-            renderProduct(resultFilter);
+
+            resultFilterProducts = resultFilter;
+            paginationProduct();
+            // renderProduct(resultFilter);
         }
         else {
-            renderProduct(allProducts);
+            resultFilterProducts = allProducts;
+            paginationProduct();
+            // renderProduct(allProducts);
         }
     });
 }
@@ -519,7 +532,7 @@ function renderButtonPagination() {
     Math.round() → làm tròn theo quy tắc 0.5
      */
     let html = "";
-    for(let i = 1; i <= totalPages; i++){
+    for (let i = 1; i <= totalPages; i++) {
         const active = currentPage == i ? "show" : ""
         html += `
             <button class="btn-page ${active}" data-page=${i}>${i}</button>
@@ -529,8 +542,8 @@ function renderButtonPagination() {
     document.querySelector('#paginationProduct').innerHTML = html;
 
     document.querySelectorAll('.btn-page').forEach(btn => {
-        btn.addEventListener('click', function(e){
-            if(this.dataset.page){
+        btn.addEventListener('click', function (e) {
+            if (this.dataset.page) {
                 currentPage = this.dataset.page; //currentPage thay đổi thì cái phân trang khi chạy cũng đổi vì dữ liệu page đổi theo currentPage
                 paginationProduct();
             }
