@@ -490,6 +490,12 @@ tbody tr:hover{
     cursor: pointer;
     text-align: center;
     font-size: 16px;
-    padding: 4px;
+    padding: 6px;
     margin: 10px;
+    border-radius: 4px;
+}
+
+#paginationProduct button.show{
+    background-color: rgb(45, 112, 189);
+    color: #fff;
 }

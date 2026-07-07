@@ -512,12 +512,14 @@ function renderButtonPagination() {
      */
     let html = "";
     for(let i = 1; i <= totalPages; i++){
+        const active = currentPage == i ? "show" : ""
         html += `
-            <button class="btn-page" data-page=${i}>${i}</button>
+            <button class="btn-page ${active}" data-page=${i}>${i}</button>
         `
     }
 
     document.querySelector('#paginationProduct').innerHTML = html;
+
     document.querySelectorAll('.btn-page').forEach(btn => {
         btn.addEventListener('click', function(e){
             if(this.dataset.page){
@@ -526,6 +528,8 @@ function renderButtonPagination() {
             }
         });
     })
+
+
 }
 
 
