@@ -1,5 +1,5 @@
 //import
-import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory, filterStatus, filterAll} from './products.js';
+import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory, filterStatus, filterAll, paginationProduct} from './products.js';
 //
 
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -50,6 +50,7 @@ menuItems.forEach(item => {
                 filterCategory(); // change value trong select là nó chạy 
                 filterStatus(); //change value trong select là nó chạy
                 filterAll(); // filter product all category / status khi bấm nút lọc
+                paginationProduct();
                 break;
 
             case "users":

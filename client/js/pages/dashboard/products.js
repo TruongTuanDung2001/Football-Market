@@ -4,7 +4,6 @@ import { getApi } from '../../api/api.js';
 //
 let allProducts = await getApi('products');
 
-
 // Show modal add product in window
 export function initProductAdd() {
     // Show/off modal post product
@@ -487,6 +486,49 @@ export function filterAll() {
         }
     });
 }
+
+// Pagination
+let currentPage = 1;
+let itemsPerPage = 3;
+
+// Get product for current page
+export function paginationProduct() {
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+
+    const productPerpage = allProducts.slice(start, end);
+    console.log(productPerpage);
+    //
+    renderProduct(productPerpage);
+    renderButtonPagination();
+}
+
+function renderButtonPagination() {
+    const totalPages = Math.ceil(allProducts.length / itemsPerPage);
+    /**
+    Math.ceil() → làm tròn lên (dùng để tính số trang) 1.2 thành 2
+    Math.floor() → làm tròn xuống 1.9 thành 1
+    Math.round() → làm tròn theo quy tắc 0.5
+     */
+    let html = "";
+    for(let i = 1; i <= totalPages; i++){
+        html += `
+            <button class="btn-page" data-page=${i}>${i}</button>
+        `
+    }
+
+    document.querySelector('#paginationProduct').innerHTML = html;
+    document.querySelectorAll('.btn-page').forEach(btn => {
+        btn.addEventListener('click', function(e){
+            if(this.dataset.page){
+                currentPage = this.dataset.page; //currentPage thay đổi thì cái phân trang khi chạy cũng đổi vì dữ liệu page đổi theo currentPage
+                paginationProduct();
+            }
+        });
+    })
+}
+
+
 //handle link image front-end
 /*
 const file = imageInput.files[0];

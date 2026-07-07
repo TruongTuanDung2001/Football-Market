@@ -480,3 +480,16 @@ tbody tr:hover{
     transform: translateY(-2px);
     transition: .1s;
 }
+
+#paginationProduct{
+    text-align: center;
+    margin: 10px;
+}
+
+#paginationProduct button{
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    padding: 4px;
+    margin: 10px;
+}
