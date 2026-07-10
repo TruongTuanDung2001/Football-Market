@@ -1,7 +1,9 @@
 import { getApi } from "../../api/api.js";
 
+//get api all user
 const apiUsers = await getApi('users')
 
+//export in app.js and run all function
 export async function getAllUsers() {
     if (await apiUsers) {
         renderListUser();
@@ -13,13 +15,12 @@ export async function getAllUsers() {
     }
 }
 
+//render all user (role is user) in html
 function renderListUser() {
     let usersList = document.getElementById('users-list');
     let html = '';
     //
     let users = apiUsers.filter(user => user.role == "user");
-    console.log(users);
-
     users.forEach(user => {
         html += `
             <tr>
@@ -68,6 +69,7 @@ function renderListUser() {
     usersList.innerHTML = html;
 }
 
+//show modal add user and edit user
 function initUser() {
     //modal add user
     let btnAdd = document.querySelector('.btn-add');
@@ -123,10 +125,13 @@ function initUser() {
     });
 }
 
+//post new user
 function postUser() {
     const btnSubmitAdd = document.getElementById('btn-submit');
     const fromAdd = document.getElementById('productForm');
-    fromAdd.addEventListener('submit', async function () {
+
+    fromAdd.addEventListener('submit', async function (e) {
+        e.preventDefault();
         const userName = document.getElementById('userName').value;
         const password = document.getElementById('userPassword').value;
         const fullNameUser = document.getElementById('userFullName').value;
@@ -161,9 +166,9 @@ function postUser() {
             throw new Error(error);
         }
     })
-
 }
 
+//remove user by id
 function removeUserById() {
     const btnDelete = document.querySelectorAll('.delete');
     btnDelete.forEach(btn => {
@@ -187,9 +192,9 @@ function removeUserById() {
             }
         });
     })
-
 }
 
+//get user by id user
 async function getUserById(idUser) {
     try {
         let response = await fetch(`http://localhost:3000/users/${idUser}`
@@ -203,6 +208,7 @@ async function getUserById(idUser) {
     }
 }
 
+//edit user by id user
 function editUserById() {
     let editFromModal = document.getElementById('editProductForm');
     editFromModal.addEventListener('submit', async function (e) {
@@ -224,20 +230,19 @@ function editUserById() {
             phone: phoneUser,
             createdAt: new Date().toISOString(),
             status: statusUser,
-        }        
-
+        }
         try {
-            
-            let response = await fetch(`http://localhost:3000/users/${idUser}`, 
+
+            let response = await fetch(`http://localhost:3000/users/${idUser}`,
                 {
-                    method: 'PATCH', 
+                    method: 'PATCH',
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(editUser)
                 }
             )
-            if(response.ok){
+            if (response.ok) {
                 alert('Edit user success !!!');
             }
         } catch (error) {
@@ -246,28 +251,29 @@ function editUserById() {
     });
 }
 
-function changeStatusUser(){
+//change status user
+function changeStatusUser() {
     let btnBan = document.querySelectorAll('.ban');
     btnBan.forEach(btn => {
-        btn.addEventListener('click', async function(e){
+        btn.addEventListener('click', async function (e) {
             let idUser = btn.dataset.id;
             let user = await getUserById(idUser);
 
-            if(!user) return; 
+            if (!user) return;
             //
             let changeStatus = {
                 status: user.status === "Active" ? "Banned" : "Active"
             }
-            
+
             //
-            let response = await fetch(`http://localhost:3000/users/${idUser}`,{
+            let response = await fetch(`http://localhost:3000/users/${idUser}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(changeStatus)
             });
-            if(response.ok){
+            if (response.ok) {
                 alert("Change status user success !!!")
             }
         });
