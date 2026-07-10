@@ -154,8 +154,19 @@
       "email": "minh@gmail.com",
       "phone": "0911111111",
       "createdAt": "2026-06-30T09:30:00",
-      "status": "banned",
+      "status": "active",
       "cart": []
+    },
+    {
+      "username": "aaa",
+      "password": "aaa",
+      "role": "user",
+      "fullName": "qqq",
+      "email": "qqq@qqq",
+      "phone": "12345678910",
+      "createdAt": "2026-07-10T06:22:09.160Z",
+      "status": "Banned",
+      "id": "rp1H2XeGPKU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

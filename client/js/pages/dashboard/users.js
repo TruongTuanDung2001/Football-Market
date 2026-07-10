@@ -6,6 +6,7 @@ export async function getAllUsers() {
     if (await apiUsers) {
         renderListUser();
         initUser();
+        postUser();
     }
 }
 
@@ -14,6 +15,8 @@ function renderListUser() {
     let html = '';
     //
     let users = apiUsers.filter(user => user.role == "user");
+    console.log(users);
+
     users.forEach(user => {
         html += `
             <tr>
@@ -81,4 +84,45 @@ function initUser() {
     closeEditUser.addEventListener('click', () => {
         modalEditUser.classList.remove('show');
     });
+}
+
+function postUser() {
+    const btnSubmitAdd = document.getElementById('btn-submit');
+
+    btnSubmitAdd.addEventListener('click', async function () {
+        const userName = document.getElementById('userName').value;
+        const password = document.getElementById('userPassword').value;
+        const fullNameUser = document.getElementById('userFullName').value;
+        const emailUser = document.getElementById('userEmail').value;
+        const phoneUser = document.getElementById('userPhone').value;
+        const statusUser = document.getElementById('statusUser').value;
+        let newUser = {
+            username: userName,
+            password: password,
+            role: "user",
+            fullName: fullNameUser,
+            email: emailUser,
+            phone: phoneUser,
+            createdAt: new Date().toISOString(),
+            status: statusUser,
+        }
+        try {
+            let response = await fetch(`http://localhost:3000/users`,
+                {
+                    method: "post",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newUser)
+                }
+            );
+            if (response) {
+                alert("Add user success !!!");
+            }
+
+        } catch (error) {
+            throw new Error(error);
+        }
+    })
+
 }
