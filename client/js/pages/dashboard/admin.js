@@ -1,6 +1,9 @@
 //import
 import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory, filterStatus, filterAll, paginationProduct} from './products.js';
+
+import { getAllUsers } from './users.js';
 //
+
 
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
@@ -53,6 +56,7 @@ menuItems.forEach(item => {
 
             case "users":
                 setActive(item);
+                getAllUsers();
                 break;
 
             case "posts":

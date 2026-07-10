@@ -136,6 +136,8 @@
       "fullName": "Truong Tuan Dung",
       "email": "dung@gmail.com",
       "phone": "0988888888",
+      "createdAt": "2026-06-30T09:30:00",
+      "status": "active",
       "cart": [
         {
           "productId": 1,
@@ -151,6 +153,8 @@
       "fullName": "Nguyen Van Minh",
       "email": "minh@gmail.com",
       "phone": "0911111111",
+      "createdAt": "2026-06-30T09:30:00",
+      "status": "banned",
       "cart": []
     }
   ],

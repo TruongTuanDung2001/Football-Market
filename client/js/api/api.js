@@ -11,6 +11,7 @@ export async function getApi(name) {
         throw new Error(error);
     }
 }
-// getApi('users');
+
+
 
 
