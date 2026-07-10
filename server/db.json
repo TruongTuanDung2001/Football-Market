@@ -63,13 +63,13 @@
     {
       "name": "glasses",
       "price": 3123121,
-      "sale": 11,
-      "quantity": 11,
+      "sale": 1212,
+      "quantity": 21312312,
       "category": "Glasses",
       "image": "/client/image/product glasses 3.jpg",
       "description": "ádgdfsgdsfgsdfgsdf",
       "createdAt": "2026-07-05T07:45:37.438Z",
-      "updatedAt": "2026-07-05T07:45:37.442Z",
+      "updatedAt": "2026-07-10T09:16:20.912Z",
       "id": "aj5h_A4z33M"
     },
     {
@@ -169,14 +169,14 @@
       "id": "rp1H2XeGPKU"
     },
     {
-      "username": "fsad",
-      "password": "12312321312",
+      "username": "aaaa",
+      "password": "cxzvzcxvzxcvzxcv",
       "role": "user",
-      "fullName": "sdaf",
-      "email": "df@fwe",
-      "phone": "3124",
-      "createdAt": "2026-07-10T07:52:48.714Z",
-      "status": "Active",
+      "fullName": "vzxcvxzcvzx",
+      "email": "sadf@cvxzxcv",
+      "phone": "4542353425234523",
+      "createdAt": "2026-07-10T09:27:25.567Z",
+      "status": "Banned",
       "id": "TDTZe4u6WxE"
     }
   ],

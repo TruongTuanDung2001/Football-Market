@@ -8,6 +8,7 @@ export async function getAllUsers() {
         initUser();
         postUser();
         removeUserById();
+        editUserById();
     }
 }
 
@@ -83,9 +84,35 @@ function initUser() {
     let btnEdit = document.querySelectorAll('.edit');
     let modalEditUser = document.getElementById('editProductModal');
     let closeEditUser = document.getElementById('closeEditModal');
-
+    let editFromModal = document.getElementById('editProductForm');
+    let html = '';
     btnEdit.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', async () => {
+            let idUser = btn.dataset.id;
+            let user = await getUserById(idUser);
+            //
+            if (user) {
+                html = `
+                <input type="text" placeholder="UserName" id="userNameEdit" required minlength="4" maxlength="20" value = "${user.username}" />    
+    
+                <input type="text" placeholder="User Password" id="userPasswordEdit" required minlength="6" value = "${user.password}" />
+    
+                <input type="text" placeholder="User Full Name" id="userFullNameEdit" required value = "${user.fullName}" />
+    
+                <input type="email" placeholder="User Email" id="userEmailEdit" required value = "${user.email}" />
+                
+                <input type="number" placeholder="User Phone" id="userPhoneEdit" required pattern="[0-9]{10}" minlength="10" min="0" value = "${user.phone}" />
+    
+                <select id="statusUserEdit">
+                    <option ${user.status == 'Active' ? "selected" : ""}>Active</option>
+                    <option ${user.status == 'Banned' ? "selected" : ""}>Banned</option>
+                </select>
+    
+                <button type="submit" data-id="${user.id}" id="btn-edit">Edit User</button>
+                `;
+
+            }
+            editFromModal.innerHTML = html;
             modalEditUser.classList.add('show');
         });
     })
@@ -143,21 +170,77 @@ function removeUserById() {
             try {
                 let idUser = this.dataset.id;
                 let result = confirm("Do you want delete user ?");
-                if(result){
+                if (result) {
                     let response = await fetch(`http://localhost:3000/users/${idUser}`,
                         {
                             method: "delete"
                         }
                     );
-                    if(response.ok){
+                    if (response.ok) {
                         alert("Deleted user success !!!");
                     }
                 }
-                
+
             } catch (error) {
                 throw new Error(error);
             }
         });
     })
 
+}
+
+async function getUserById(idUser) {
+    try {
+        let response = await fetch(`http://localhost:3000/users/${idUser}`
+        );
+        if (response.ok) {
+            let data = await response.json();
+            return data;
+        }
+    } catch (error) {
+        throw new Error(error)
+    }
+}
+
+function editUserById() {
+    let editFromModal = document.getElementById('editProductForm');
+    editFromModal.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const userName = document.getElementById('userNameEdit').value;
+        const password = document.getElementById('userPasswordEdit').value;
+        const fullNameUser = document.getElementById('userFullNameEdit').value;
+        const emailUser = document.getElementById('userEmailEdit').value;
+        const phoneUser = document.getElementById('userPhoneEdit').value;
+        const statusUser = document.getElementById('statusUserEdit').value;
+        //
+        const idUser = document.getElementById('btn-edit').dataset.id;
+        let editUser = {
+            username: userName,
+            password: password,
+            role: "user",
+            fullName: fullNameUser,
+            email: emailUser,
+            phone: phoneUser,
+            createdAt: new Date().toISOString(),
+            status: statusUser,
+        }        
+
+        try {
+            
+            let response = await fetch(`http://localhost:3000/users/${idUser}`, 
+                {
+                    method: 'PATCH', 
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(editUser)
+                }
+            )
+            if(response.ok){
+                alert('Edit user success !!!');
+            }
+        } catch (error) {
+            throw new Error(error);
+        }
+    });
 }
