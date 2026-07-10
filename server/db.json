@@ -167,6 +167,28 @@
       "createdAt": "2026-07-10T06:22:09.160Z",
       "status": "Banned",
       "id": "rp1H2XeGPKU"
+    },
+    {
+      "username": "",
+      "password": "",
+      "role": "user",
+      "fullName": "",
+      "email": "",
+      "phone": "",
+      "createdAt": "2026-07-10T07:50:58.819Z",
+      "status": "Active",
+      "id": "n5-AZh5SBr8"
+    },
+    {
+      "username": "fsad",
+      "password": "12312321312",
+      "role": "user",
+      "fullName": "sdaf",
+      "email": "df@fwe",
+      "phone": "3124",
+      "createdAt": "2026-07-10T07:52:48.714Z",
+      "status": "Active",
+      "id": "TDTZe4u6WxE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

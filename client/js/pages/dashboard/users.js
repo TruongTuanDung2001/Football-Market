@@ -20,9 +20,15 @@ function renderListUser() {
     users.forEach(user => {
         html += `
             <tr>
+              <td>${user.username}</td>
+
+              <td>${user.password}</td>
+
               <td>${user.fullName}</td>
 
               <td>${user.email}</td>
+              
+              <td>${user.phone}</td>
 
               <td>
                 <span class="role admin"> ${user.role} </span>
@@ -88,8 +94,8 @@ function initUser() {
 
 function postUser() {
     const btnSubmitAdd = document.getElementById('btn-submit');
-
-    btnSubmitAdd.addEventListener('click', async function () {
+    const fromAdd = document.getElementById('productForm');
+    fromAdd.addEventListener('submit', async function () {
         const userName = document.getElementById('userName').value;
         const password = document.getElementById('userPassword').value;
         const fullNameUser = document.getElementById('userFullName').value;

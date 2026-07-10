@@ -53,8 +53,11 @@
         <table>
           <thead>
             <tr>
+              <th>User Name</th>
+              <th>Password</th>
               <th>Name</th>
               <th>Email</th>
+              <th>Phone</th>
               <th>Role</th>
               <th>Joined</th>
               <th>Status</th>
@@ -116,21 +119,20 @@
         </div>
 
         <form id="productForm">
-          <input type="text" placeholder="UserName" id="userName" />
+          <input type="text" placeholder="UserName" id="userName" required minlength="4" maxlength="20" />
 
-          <input type="text" placeholder="User Password" id="userPassword" />
+          <input type="text" placeholder="User Password" id="userPassword" required minlength="6"/>
 
-          <input type="text" placeholder="User Full Name" id="userFullName" />
+          <input type="text" placeholder="User Full Name" id="userFullName" required/>
 
-          <input type="email" placeholder="User Email" id="userEmail" />
+          <input type="email" placeholder="User Email" id="userEmail" required/>
           
-          <input type="number" placeholder="User Phone" id="userPhone" />
+          <input type="number" placeholder="User Phone" id="userPhone" required pattern="[0-9]{10}" minlength="10" min="0"/>
 
           <select id="statusUser">
               <option>Active</option>
               <option>Banned</option>
           </select>
-
 
           <button type="submit" id="btn-submit">Add Product</button>
         </form>
