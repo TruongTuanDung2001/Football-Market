@@ -9,6 +9,7 @@ export async function getAllUsers() {
         postUser();
         removeUserById();
         editUserById();
+        changeStatusUser();
     }
 }
 
@@ -243,4 +244,32 @@ function editUserById() {
             throw new Error(error);
         }
     });
+}
+
+function changeStatusUser(){
+    let btnBan = document.querySelectorAll('.ban');
+    btnBan.forEach(btn => {
+        btn.addEventListener('click', async function(e){
+            let idUser = btn.dataset.id;
+            let user = await getUserById(idUser);
+
+            if(!user) return; 
+            //
+            let changeStatus = {
+                status: user.status === "Active" ? "Banned" : "Active"
+            }
+            
+            //
+            let response = await fetch(`http://localhost:3000/users/${idUser}`,{
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(changeStatus)
+            });
+            if(response.ok){
+                alert("Change status user success !!!")
+            }
+        });
+    })
 }

@@ -137,7 +137,7 @@
       "email": "dung@gmail.com",
       "phone": "0988888888",
       "createdAt": "2026-06-30T09:30:00",
-      "status": "active",
+      "status": "Active",
       "cart": [
         {
           "productId": 1,
@@ -154,7 +154,7 @@
       "email": "minh@gmail.com",
       "phone": "0911111111",
       "createdAt": "2026-06-30T09:30:00",
-      "status": "active",
+      "status": "Banned",
       "cart": []
     },
     {
@@ -176,7 +176,7 @@
       "email": "sadf@cvxzxcv",
       "phone": "4542353425234523",
       "createdAt": "2026-07-10T09:27:25.567Z",
-      "status": "Banned",
+      "status": "Active",
       "id": "TDTZe4u6WxE"
     }
   ],
