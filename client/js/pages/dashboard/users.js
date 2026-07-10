@@ -7,6 +7,7 @@ export async function getAllUsers() {
         renderListUser();
         initUser();
         postUser();
+        removeUserById();
     }
 }
 
@@ -20,8 +21,10 @@ function renderListUser() {
     users.forEach(user => {
         html += `
             <tr>
-              <td>${user.username}</td>
+              <td>${user.id}</td>
 
+              <td>${user.username}</td>
+              
               <td>${user.password}</td>
 
               <td>${user.fullName}</td>
@@ -43,15 +46,15 @@ function renderListUser() {
               <td>
                 <div class="action">
 
-                  <button class="edit">
+                  <button class="edit" data-id=${user.id}>
                     <i class="fa-solid fa-pen"></i>
                   </button>
 
-                  <button class="ban">
+                  <button class="ban" data-id=${user.id}>
                     <i class="fa-solid fa-user-slash"></i>
                   </button>
 
-                  <button class="delete">
+                  <button class="delete" data-id=${user.id}>
                     <i class="fa-solid fa-trash"></i>
                   </button>
                 </div>
@@ -129,6 +132,32 @@ function postUser() {
         } catch (error) {
             throw new Error(error);
         }
+    })
+
+}
+
+function removeUserById() {
+    const btnDelete = document.querySelectorAll('.delete');
+    btnDelete.forEach(btn => {
+        btn.addEventListener('click', async function (e) {
+            try {
+                let idUser = this.dataset.id;
+                let result = confirm("Do you want delete user ?");
+                if(result){
+                    let response = await fetch(`http://localhost:3000/users/${idUser}`,
+                        {
+                            method: "delete"
+                        }
+                    );
+                    if(response.ok){
+                        alert("Deleted user success !!!");
+                    }
+                }
+                
+            } catch (error) {
+                throw new Error(error);
+            }
+        });
     })
 
 }
