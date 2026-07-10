@@ -3,18 +3,19 @@ import { getApi } from "../../api/api.js";
 const apiUsers = await getApi('users')
 
 export async function getAllUsers() {
-    console.log(apiUsers);
-    renderListUser();
-    initProduct();
+    if (await apiUsers) {
+        renderListUser();
+        initUser();
+    }
 }
 
-async function renderListUser() {
+function renderListUser() {
     let usersList = document.getElementById('users-list');
     let html = '';
-    if (await apiUsers) {
-        let users = apiUsers.filter(user => user.role == "user");
-        users.forEach(user => {
-            html += `
+    //
+    let users = apiUsers.filter(user => user.role == "user");
+    users.forEach(user => {
+        html += `
             <tr>
               <td>${user.fullName}</td>
 
@@ -48,22 +49,36 @@ async function renderListUser() {
               </td>
             </tr>
             `
-        });
-    }
+    });
+    //
     usersList.innerHTML = html;
 }
 
-function initProduct(){
+function initUser() {
+    //modal add user
     let btnAdd = document.querySelector('.btn-add');
-    let modelAddUser = document.getElementById('addUsersModal');
+    let modalAddUser = document.getElementById('addUsersModal');
     let closeModel = document.getElementById('closeModal');
-    btnAdd.addEventListener('click', function(){
-        modelAddUser.classList.add('show');
-        console.log();
-        
+    btnAdd.addEventListener('click', function () {
+        modalAddUser.classList.add('show');
     });
 
-    closeModel.addEventListener('click', ()=>{
-    modelAddUser.classList.remove('show'); 
+    closeModel.addEventListener('click', () => {
+        modalAddUser.classList.remove('show');
+    });
+
+    //model edit user
+    let btnEdit = document.querySelectorAll('.edit');
+    let modalEditUser = document.getElementById('editProductModal');
+    let closeEditUser = document.getElementById('closeEditModal');
+
+    btnEdit.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modalEditUser.classList.add('show');
+        });
+    })
+
+    closeEditUser.addEventListener('click', () => {
+        modalEditUser.classList.remove('show');
     });
 }

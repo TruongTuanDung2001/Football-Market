@@ -111,7 +111,7 @@
       <div class="modal" id="addUsersModal">
         <div class="modal-content">
           <div class="modal-header">
-            <h2>Add Product</h2>
+            <h2>Add User</h2>
             <span id="closeModal">&times;</span>
           </div>
 
@@ -121,6 +121,29 @@
             <input type="email" placeholder="User Email" id="userEmail" />
 
             <button type="submit" id="btn-submit">Add Product</button>
+          </form>
+        </div>
+      </div>
+
+            <!-- Edit Product -->
+      <div class="modal" id="editProductModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Edit User</h2>
+            <span id="closeEditModal">&times;</span>
+          </div>
+
+          <form id="editProductForm">
+            <input type="hidden" id="editProductId" />
+
+            <input type="text" placeholder="Product Name" id="editUserName"/>
+            
+            <input type="text" placeholder="User Email"id="editProductEmail"/>
+          
+
+            <textarea placeholder="Description" id="editDescription"></textarea>
+
+            <button type="submit" id="btn-edit">Update Product</button>
           </form>
         </div>
       </div>

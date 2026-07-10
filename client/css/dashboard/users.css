@@ -314,3 +314,141 @@ tbody tr:hover {
 #productForm button:hover {
     background: #16a085;
 }
+
+
+
+/* Edit product */
+/* ===========================
+   Edit Product Modal
+=========================== */
+
+#editProductModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#editProductModal.show {
+    display: flex;
+}
+
+#editProductModal .modal-content {
+    width: 520px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    animation: popup .25s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+#editProductModal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#editProductModal .modal-header h2 {
+    font-size: 22px;
+    color: #222;
+}
+
+#closeEditModal {
+    font-size: 28px;
+    cursor: pointer;
+    color: #777;
+    transition: .2s;
+}
+
+#closeEditModal:hover {
+    color: #e74c3c;
+}
+
+#editProductForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#editProductForm input,
+#editProductForm select,
+#editProductForm textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: .2s;
+}
+
+#editProductForm textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+#editProductForm input:focus,
+#editProductForm select:focus,
+#editProductForm textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52,152,219,.15);
+}
+
+/* Image Preview */
+
+.image-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-preview p {
+    font-size: 14px;
+    color: #666;
+}
+
+.image-preview img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Button */
+
+#editProductForm button {
+    margin-top: 10px;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #3498db;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#editProductForm button:hover {
+    background: #2980b9;
+}
+
+#filterAll{
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 0px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .1s;
+}
+#filterAll:hover{
+    transform: translateY(-2px);
+    transition: .1s;
+}
