@@ -5,6 +5,7 @@ const apiUsers = await getApi('users')
 export async function getAllUsers() {
     console.log(apiUsers);
     renderListUser();
+    initProduct();
 }
 
 async function renderListUser() {
@@ -50,5 +51,19 @@ async function renderListUser() {
         });
     }
     usersList.innerHTML = html;
-    
+}
+
+function initProduct(){
+    let btnAdd = document.querySelector('.btn-add');
+    let modelAddUser = document.getElementById('addUsersModal');
+    let closeModel = document.getElementById('closeModal');
+    btnAdd.addEventListener('click', function(){
+        modelAddUser.classList.add('show');
+        console.log();
+        
+    });
+
+    closeModel.addEventListener('click', ()=>{
+    modelAddUser.classList.remove('show'); 
+    });
 }
