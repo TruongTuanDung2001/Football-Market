@@ -94,20 +94,20 @@ renderCategory();
 
 
 //render featured
-function renderFeatured(){
+function renderFeatured() {
     let featuredList = document.getElementById('feature_list');
     let html = '';
-    
+
     //lấy product mỗi category 1 cái
     const result = [];
-    if(!apiProduct) return
-    if(!apiCategory) return
+    if (!apiProduct) return
+    if (!apiCategory) return
 
     apiCategory.forEach(c => {
-        const product = apiProduct.find(p =>(
+        const product = apiProduct.find(p => (
             p.categoryId == c.id
         ))
-        if(product){
+        if (product) {
             result.push(product);
         }
     });
@@ -131,7 +131,38 @@ function renderFeatured(){
             </div>
         `
     });
-    featuredList.innerHTML = html;   
+    featuredList.innerHTML = html;
 }
 
 renderFeatured();
+
+//render deals (sale)
+function renderDeals() {
+    let dealsList = document.getElementById('deals_list');
+    let html = '';
+
+    if (!apiProduct) return;
+
+    let saleProduct = apiProduct.filter(p => (
+        p.sale > 0
+    ));
+
+    //render
+    for(let i = 0; i < 3; i ++){
+        html += `
+            <div class="product-deals_content">
+                <div class="image">
+                    <img src="${saleProduct[i].image}" alt="" />
+                </div>
+                <div class="content">
+                    <p>${saleProduct[i].name}</p>
+                    <p class="sale">Sale ${saleProduct[i].sale}</p>
+                    <button>Detail</button>
+                </div>
+            </div>
+        `;
+    }
+    dealsList.innerHTML =  html;
+}
+
+renderDeals();
