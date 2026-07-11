@@ -4,6 +4,9 @@ import { getApi } from '../../api/api.js';
 //
 let allProducts = await getApi('products');
 let resultFilterProducts = [...allProducts];
+//
+let allCategories = await getApi('categories');
+
 
 // Show modal add product in window
 export function initProductAdd() {
@@ -24,7 +27,7 @@ export function initProductAdd() {
         modalAdd.classList.remove("show");
     });
 
-
+    renderCategories();
 
     // Post api
     postProductApi();
@@ -42,7 +45,7 @@ export function postProductApi() {
         let sale = document.querySelector('#sale').value;
         let image = document.querySelector('#image');
         let description = document.querySelector('#description').value.trim();
-
+        let categoryId;
         e.preventDefault();
         const file = image.files[0];
         // Validate
@@ -569,26 +572,18 @@ function renderButtonPagination() {
 
 }
 
+//
+function renderCategories() {
+    const filterCategory = document.getElementById('filterCategory');
+    let html = '';
 
-//handle link image front-end
-/*
-const file = imageInput.files[0];
+    if (!allCategories) return;
 
-const imagePath = `/client/assets/images/${file.name}`;
-
-console.log(imagePath);
-
-//reset from
-document.querySelector("#productForm").reset();
-
-//dong model
-document.querySelector("#addProductModal").classList.remove("show");
-
-//render lại
-renderProducts();
-
-icon eye
-                  <button class="view">
-                    <i class="fa-solid fa-eye"></i>
-                  </button>
-*/
+    html = '<option>All Categories</option> '
+    allCategories.forEach(cate => {
+        html += `
+        <option data-id="${cate.id}">${cate.name}</option> 
+        `
+    });
+    filterCategory.innerHTML = html;
+}
