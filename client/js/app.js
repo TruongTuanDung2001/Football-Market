@@ -1,19 +1,20 @@
+import { getApi } from "./api/api.js"
 //
 const banner = document.querySelector('.banner');
 const bannerImg = document.querySelector('.banner-img');
 
 //
 window.addEventListener('scroll', () => {
-  // const scrollY = window.scrollY; //lấy vị trí của window scroll từ đầu
-  const rectBanner = banner.getBoundingClientRect();//lấy vị trí của banner để scroll lun 
-  bannerImg.style.transform = `translateY(${-rectBanner.top * .2}px)`;
+    // const scrollY = window.scrollY; //lấy vị trí của window scroll từ đầu
+    const rectBanner = banner.getBoundingClientRect();//lấy vị trí của banner để scroll lun 
+    bannerImg.style.transform = `translateY(${-rectBanner.top * .2}px)`;
 
 });
 
 // btn-detail to detail page (not yet data-id).
 const btnDetail = document.querySelectorAll('.btn-detail');
 btnDetail.forEach(btn => {
-    btn.addEventListener('click', function(){
+    btn.addEventListener('click', function () {
         window.location.href = 'detail.html';
     });
 });
@@ -28,30 +29,64 @@ let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 console.log(currentUser);
 
 
-if(currentUser){
+if (currentUser) {
     fullName.textContent = currentUser.fullName;
     logout.textContent = 'Logout';
-}else{
+} else {
     logout.textContent = 'Login';
 }
 
-inforUser.addEventListener('click', function(e){
-    if(getComputedStyle(logout).display === 'none'){ // tại sao không dùng logout.style.display để kiểm tra lun: vì lúc đầu nó sẽ kh biết display là gì và nó là "", nên bấm 2 lần mới chạy, lần 1 là lấy display của logout trong css, lần sau mới ktra và chạy, nên dùng cái ở trên để lấy lần đầu lun
+inforUser.addEventListener('click', function (e) {
+    if (getComputedStyle(logout).display === 'none') { // tại sao không dùng logout.style.display để kiểm tra lun: vì lúc đầu nó sẽ kh biết display là gì và nó là "", nên bấm 2 lần mới chạy, lần 1 là lấy display của logout trong css, lần sau mới ktra và chạy, nên dùng cái ở trên để lấy lần đầu lun
         logout.style.display = 'block';
-    }else{
+    } else {
         logout.style.display = 'none';
     }
     //
 
 });
 
-logout.addEventListener('click', function(e){
-    if(logout.textContent === 'Logout'){
+logout.addEventListener('click', function (e) {
+    if (logout.textContent === 'Logout') {
         localStorage.removeItem('currentUser');
         window.location.href = '/client/index.html'
-    }else{
+    } else {
         window.location.href = '/client/login.html'
     }
 });
 
 
+//get all categories
+let apiCategory = await getApi('categories');
+let apiProduct = await getApi('products');
+
+//
+console.log(apiCategory);
+console.log(apiProduct);
+
+//render category
+function renderCategory() {
+    let categoriesList = document.getElementById('categories_list');
+    let html = '';
+    //
+    if (!apiCategory) return;
+    //
+    apiCategory.forEach(category => {
+        html += `
+            <div class="categories-item">
+                <img
+                class="category-img"
+                src="${category.image}"
+                alt=""
+                />
+                <div class="name">${category.name}</div>
+                <button class="btn-categories" data-category="${category.id}">
+                SHOP NOW
+                </button>
+            </div>
+        `;
+    })
+    categoriesList.innerHTML = html;
+}
+
+renderCategory();

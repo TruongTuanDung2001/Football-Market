@@ -1,4 +1,31 @@
 {
+  "categories":[
+      {
+          "id":"1",
+          "name":"Glasses",
+          "image":"/client/image/categories glasses.jpg"
+      },
+      {
+          "id":"2",
+          "name":"Shoes",
+          "image":"/client/image/categories shoes.jpg"
+      },
+      {
+          "id":"3",
+          "name":"Jacket",
+          "image":"/client/image/categories jacket.jpg"
+      },
+      {
+          "id":"4",
+          "name":"Hat",
+          "image":"/client/image/categories hat.jpg"
+      },
+      {
+          "id":"5",
+          "name":"Shirt",
+          "image":"/client/image/categories shirt.jpg"
+      }
+  ],
   "products": [
     {
       "id": "1",
@@ -6,6 +33,7 @@
       "price": 1200000,
       "sale": 15,
       "quantity": 18,
+      "categoryId": 2,
       "category": "Shoes",
       "image": "https://picsum.photos/300",
       "description": "Nike Mercurial TF chính hãng.",
@@ -30,6 +58,7 @@
       "price": 999,
       "sale": 999,
       "quantity": 999,
+      "categoryId": 2,
       "category": "Shoes",
       "image": "/client/image/logo.png",
       "description": "he is goat",
@@ -41,6 +70,7 @@
       "price": 20,
       "sale": 0,
       "quantity": 0,
+      "categoryId": 5,
       "category": "Shirt",
       "image": "/client/image/product 2.jpg",
       "description": "di giua thien ha anh van se buoc di de kiem emmmmm",
@@ -53,6 +83,7 @@
       "price": 121212,
       "sale": 1212,
       "quantity": 1212,
+      "categoryId": 2,
       "category": "Shoes",
       "image": "/client/image/product hat 1.jpg",
       "description": "fasdfasdasdgasd",
@@ -77,6 +108,7 @@
       "price": 123,
       "sale": 321,
       "quantity": 321,
+      "categoryId": 5,
       "category": "Shirt",
       "image": "/client/image/categories hat.jpg",
       "description": "good",
@@ -89,6 +121,7 @@
       "price": 123231,
       "sale": 11,
       "quantity": 41142,
+      "categoryId": 2,
       "category": "Shoes",
       "image": "/client/image/categories shirt.jpg",
       "description": "ronaldol",
@@ -101,6 +134,7 @@
       "price": 23412,
       "sale": 12,
       "quantity": 412412,
+      "categoryId": 2,
       "category": "Shoes",
       "image": "/client/image/categories shirt.jpg",
       "description": "aaaa",
