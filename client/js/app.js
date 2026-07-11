@@ -90,3 +90,48 @@ function renderCategory() {
 }
 
 renderCategory();
+
+
+
+//render featured
+function renderFeatured(){
+    let featuredList = document.getElementById('feature_list');
+    let html = '';
+    
+    //lấy product mỗi category 1 cái
+    const result = [];
+    if(!apiProduct) return
+    if(!apiCategory) return
+
+    apiCategory.forEach(c => {
+        const product = apiProduct.find(p =>(
+            p.categoryId == c.id
+        ))
+        if(product){
+            result.push(product);
+        }
+    });
+
+    //render
+    result.forEach(rs => {
+        html += `
+            <div class="product-item">
+                <div class="img">
+                <img src="${rs.image}" alt="" />
+                </div>
+                <div class="name">${rs.name}</div>
+                <div class="price">${rs.price}$</div>
+                <button class="btn-detail" data-id="">Detail</button>
+                <div class="product-item_actions">
+                <button class="btn-buy">Buy <i></i></button>
+                <button class="btn-addCart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                </div>
+            </div>
+        `
+    });
+    featuredList.innerHTML = html;   
+}
+
+renderFeatured();

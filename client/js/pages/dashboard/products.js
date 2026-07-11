@@ -577,7 +577,7 @@ function renderButtonPagination() {
 }
 
 //
-export function renderCategories() {
+function renderCategories() {
     const filterCategory = document.getElementById('filterCategory');
     let html = '';
 
@@ -595,6 +595,4 @@ export function renderCategories() {
     filterCategory.innerHTML = '<option>All Categories</option> ' + html;
     addCategories.innerHTML = html;
     editCategories.innerHTML = html;
-    console.log(editCategories);
-    
 } 
