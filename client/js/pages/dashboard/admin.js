@@ -1,5 +1,5 @@
 //import
-import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory, filterStatus, filterAll, paginationProduct} from './products.js';
+import { initProductAdd, initProductEdit, showProduct, removeProductById, searchProduct, filterCategory, filterStatus, filterAll, paginationProduct, renderCategories} from './products.js';
 
 import { getAllUsers } from './users.js';
 //
@@ -52,6 +52,7 @@ menuItems.forEach(item => {
                 filterStatus(); //change value trong select là nó chạy
                 filterAll(); // filter product all category / status khi bấm nút lọc
                 paginationProduct();
+                renderCategories();
                 break;
 
             case "users":

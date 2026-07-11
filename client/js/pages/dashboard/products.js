@@ -27,8 +27,6 @@ export function initProductAdd() {
         modalAdd.classList.remove("show");
     });
 
-    renderCategories();
-
     // Post api
     postProductApi();
 }
@@ -45,7 +43,7 @@ export function postProductApi() {
         let sale = document.querySelector('#sale').value;
         let image = document.querySelector('#image');
         let description = document.querySelector('#description').value.trim();
-        let categoryId;
+        let categoryId = document.querySelector('#category').selectedOptions[0].dataset.id;
         e.preventDefault();
         const file = image.files[0];
         // Validate
@@ -74,6 +72,7 @@ export function postProductApi() {
             price: Number(price),
             sale: Number(sale),
             quantity: Number(sale),
+            categoryId: Number(categoryId),
             category: category,
             image: imagePath,
             description: description,
@@ -158,6 +157,7 @@ export function editProductApi(id) {
         let editSale = document.getElementById('editSale').value;
         let editPreviewImage = document.getElementById('editPreviewImage').getAttribute('src');
         let editDescription = document.getElementById('editDescription').value;
+        let categoryId = document.querySelector('#editCategory').selectedOptions[0].dataset.id;
         try {
             const newProduct = {
                 id: id,
@@ -165,6 +165,7 @@ export function editProductApi(id) {
                 price: Number(editPrice),
                 sale: Number(editSale),
                 quantity: Number(editQuantity),
+                categoryId: Number(categoryId),
                 category: editCategory,
                 image: editPreviewImage,
                 description: editDescription,
@@ -255,6 +256,9 @@ export function initProductEdit() {
                     </form>
                 </div>
             `;
+
+            //
+            renderCategories();
 
             //gán category option
             let productCategory = document.getElementById("editCategory").value = product.category;
@@ -573,17 +577,24 @@ function renderButtonPagination() {
 }
 
 //
-function renderCategories() {
+export function renderCategories() {
     const filterCategory = document.getElementById('filterCategory');
     let html = '';
 
     if (!allCategories) return;
-
-    html = '<option>All Categories</option> '
     allCategories.forEach(cate => {
         html += `
         <option data-id="${cate.id}">${cate.name}</option> 
         `
     });
-    filterCategory.innerHTML = html;
-}
+
+    //
+    let addCategories = document.getElementById('category');
+    let editCategories = document.getElementById('editCategory');
+    //
+    filterCategory.innerHTML = '<option>All Categories</option> ' + html;
+    addCategories.innerHTML = html;
+    editCategories.innerHTML = html;
+    console.log(editCategories);
+    
+} 

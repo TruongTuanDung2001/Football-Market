@@ -1,30 +1,30 @@
 {
-  "categories":[
-      {
-          "id":"1",
-          "name":"Glasses",
-          "image":"/client/image/categories glasses.jpg"
-      },
-      {
-          "id":"2",
-          "name":"Shoes",
-          "image":"/client/image/categories shoes.jpg"
-      },
-      {
-          "id":"3",
-          "name":"Jacket",
-          "image":"/client/image/categories jacket.jpg"
-      },
-      {
-          "id":"4",
-          "name":"Hat",
-          "image":"/client/image/categories hat.jpg"
-      },
-      {
-          "id":"5",
-          "name":"Shirt",
-          "image":"/client/image/categories shirt.jpg"
-      }
+  "categories": [
+    {
+      "id": "1",
+      "name": "Glasses",
+      "image": "/client/image/categories glasses.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Shoes",
+      "image": "/client/image/categories shoes.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Jacket",
+      "image": "/client/image/categories jacket.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Hat",
+      "image": "/client/image/categories hat.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Shirt",
+      "image": "/client/image/categories shirt.jpg"
+    }
   ],
   "products": [
     {
@@ -141,6 +141,32 @@
       "createdAt": "2026-07-07T10:23:52.344Z",
       "updatedAt": "2026-07-07T10:30:40.954Z",
       "id": "xu_dvmsjF-U"
+    },
+    {
+      "name": "product 3",
+      "price": 32342,
+      "sale": 112,
+      "quantity": 112,
+      "categoryId": null,
+      "category": "Jacket",
+      "image": "/client/image/product glasses 2.jpg",
+      "description": "good product",
+      "createdAt": "2026-07-11T06:34:07.968Z",
+      "updatedAt": "2026-07-11T06:34:07.969Z",
+      "id": "_-Yzlwh7maQ"
+    },
+    {
+      "name": "jacket",
+      "price": 33333,
+      "sale": 3333,
+      "quantity": 3333,
+      "categoryId": 3,
+      "category": "Jacket",
+      "image": "/client/image/product jaket 5.jpg",
+      "description": "good jacket",
+      "createdAt": "2026-07-11T06:38:45.422Z",
+      "updatedAt": "2026-07-11T06:43:40.630Z",
+      "id": "iE49YmqZhgo"
     }
   ],
   "users": [
