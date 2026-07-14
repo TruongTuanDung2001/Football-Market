@@ -12,7 +12,15 @@ console.log(id);
 console.log(apiProduct);
 
 const product = apiProduct.filter(p => p.id == id);
-console.log(product);
+
+//get product related same category
+const related = apiProduct.filter(item =>
+    item.category === product[0].category &&
+    item.id !== product.id
+);
+
+console.log(related);
+
 
 //get product in detail content
 function showProductDetail() {
@@ -48,3 +56,41 @@ function showProductDetail() {
 }
 
 showProductDetail();
+
+
+//get product related
+function showProductRelated() {
+    const detailRelated = document.querySelector('.related_list');
+    let html = '';
+
+    //
+    related.forEach(r => {
+        html += `
+            <div class="related-item">
+                <img
+                    class="related-img"
+                    src="${r.image}"
+                    alt=""
+                />
+                <div class="name">${r.name}</div>
+                <button class="btn-related" data-id="${r.id}">Detail</button>
+            </div>
+    `;
+    detailRelated.innerHTML = html;
+    })
+}
+
+showProductRelated();
+
+//go to detail page
+function goToDetail(){
+    const btnDetail = document.querySelectorAll('.btn-related');
+    btnDetail.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const id = this.dataset.id;
+            window.location.href = `detail.html?id=${id}`;
+        });
+    });
+}   
+
+goToDetail();
