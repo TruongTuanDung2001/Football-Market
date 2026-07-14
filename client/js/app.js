@@ -121,7 +121,7 @@ function renderFeatured() {
                 </div>
                 <div class="name">${rs.name}</div>
                 <div class="price">${rs.price}$</div>
-                <button class="btn-detail" data-id="">Detail</button>
+                <button class="btn-detail" data-id="${rs.id}">Detail</button>
                 <div class="product-item_actions">
                 <button class="btn-buy">Buy <i></i></button>
                 <button class="btn-addCart">
@@ -132,6 +132,7 @@ function renderFeatured() {
         `
     });
     featuredList.innerHTML = html;
+    goToDetail();
 }
 
 renderFeatured();
@@ -166,3 +167,15 @@ function renderDeals() {
 }
 
 renderDeals();
+
+//
+//go to detail page
+function goToDetail(){
+    const btnDetail = document.querySelectorAll('.btn-detail');
+    btnDetail.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const id = this.dataset.id;
+            window.location.href = `detail.html?id=${id}`;
+        });
+    });
+}   
